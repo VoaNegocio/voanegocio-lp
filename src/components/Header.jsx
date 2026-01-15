@@ -27,13 +27,13 @@ const Header = () => {
 
             {/* Main Header */}
             <header
-                className={`fixed top-[37px] left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-voa-navy/80 backdrop-blur-xl border-b border-voa-light/10 py-4' : 'bg-transparent py-6'
+                className={`fixed left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'top-0 bg-voa-navy/80 backdrop-blur-xl border-b border-voa-light/10 py-4' : 'top-[37px] bg-transparent py-6'
                     }`}
             >
                 <div className="container mx-auto px-4 flex items-center justify-between">
                     {/* Logo */}
-                    <div className="text-2xl font-display font-bold text-white tracking-tight">
-                        Voa<span className="text-voa-cyan">Negócio</span>
+                    <div className="flex-shrink-0">
+                        <img src="/src/assets/logo-header.png" alt="Voa Negócio" className="h-8 md:h-10 w-auto" />
                     </div>
 
                     {/* Desktop Nav */}

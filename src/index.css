@@ -1,5 +1,21 @@
-/* Google Fonts */
+/* Google Fonts support/fallback */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: 'Wix Madefor Display';
+  src: url('/src/assets/fonts/WixMadeforDisplay.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('/src/assets/fonts/Figtree.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;

@@ -15,8 +15,8 @@ export default {
         'brand-green': '#25D366', // WhatsApp Green (Standard)
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Sora', 'sans-serif'],
+        sans: ['Figtree', 'Inter', 'sans-serif'],
+        display: ['"Wix Madefor Display"', 'Sora', 'sans-serif'],
       },
       backgroundImage: {
         'grid-pattern': "linear-gradient(to right, #37373d 1px, transparent 1px), linear-gradient(to bottom, #37373d 1px, transparent 1px)",
