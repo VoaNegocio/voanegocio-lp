@@ -36,6 +36,17 @@ const SocialProof = () => {
                         </div>
                     ))}
                 </div>
+
+                <div className="mt-16 text-center">
+                    <a
+                        href="https://wa.me/5534991880039?text=Quero%20ter%20esses%20resultados%20na%20minha%20empresa"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block border border-voa-cyan text-voa-cyan hover:bg-voa-cyan hover:text-voa-navy font-bold py-3 px-8 rounded-lg transition-all"
+                    >
+                        Quero ter esses resultados
+                    </a>
+                </div>
             </div>
         </section>
     );

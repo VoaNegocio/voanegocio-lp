@@ -7,6 +7,7 @@ import Solution from './components/Solution';
 import Methodology from './components/Methodology';
 import SocialProof from './components/SocialProof';
 import Filter from './components/Filter';
+import GrowthSimulator from './components/GrowthSimulator';
 import CTAFinal from './components/CTAFinal';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -26,6 +27,7 @@ function App() {
         <Authority />
         <Solution />
         <Methodology />
+        <GrowthSimulator />
         <SocialProof />
         <Filter />
         <CTAFinal />
