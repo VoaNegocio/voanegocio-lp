@@ -27,7 +27,33 @@
   }
 
   body {
-    @apply bg-voa-navy text-voa-light font-sans antialiased selection:bg-voa-cyan selection:text-voa-navy;
+    @apply bg-voa-navy text-voa-light font-sans antialiased selection:bg-voa-cyan selection:text-voa-navy relative overflow-x-hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(0, 207, 255, 0.15) 0%, rgba(0, 48, 81, 0) 70%);
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -20%;
+    left: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(59, 0, 242, 0.15) 0%, rgba(0, 48, 81, 0) 70%);
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
   }
 
   h1,
@@ -38,6 +64,26 @@
   h6 {
     @apply font-display font-bold text-white;
   }
+}
+
+@keyframes scanline {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+.bg-grid-animated {
+  background-size: 50px 50px;
+  background-image:
+    linear-gradient(to right, rgba(0, 207, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 207, 255, 0.03) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, transparent, black, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 5%, black 40%, black 70%, transparent 95%);
+  animation: scanline 20s linear infinite;
 }
 
 @layer utilities {
