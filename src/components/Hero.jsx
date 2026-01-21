@@ -62,7 +62,7 @@ const Hero = () => {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-lg md:text-xl text-voa-light mb-10 max-w-2xl mx-auto leading-relaxed"
                         >
-                            A Voa Negócio ajuda PMEs a estruturarem <strong>Marketing e Vendas</strong>, com foco total em aumento de faturamento e previsibilidade no digital.
+                            A <span className="text-voa-cyan">Voa </span><span className="text-white"> Negócio</span> ajuda PMEs a estruturarem <strong> <span className="text-voa-cyan">Marketing e Vendas</span></strong>, com foco total em aumento de faturamento e previsibilidade no digital.
                         </motion.p>
 
                         <motion.div
@@ -75,9 +75,9 @@ const Hero = () => {
                                 Falar com Especialista
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
-                            <button className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border border-white/10 text-white text-lg font-medium px-8 py-4 rounded-xl transition-all flex items-center justify-center backdrop-blur-sm">
+                            <a href="#como-funciona" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border border-white/10 text-white text-lg font-medium px-8 py-4 rounded-xl transition-all flex items-center justify-center backdrop-blur-sm">
                                 Ver Como Funciona
-                            </button>
+                            </a>
                         </motion.div>
                     </div>
                 </div>

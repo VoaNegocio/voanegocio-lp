@@ -1,8 +1,92 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import socialProofBg from '../assets/images/social-proof-grey-network.png';
+import TestimonialCard from './TestimonialCard';
 
 const SocialProof = () => {
+    const scrollContainerRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const testimonials = [
+        {
+            id: 1,
+            stars: 5,
+            text: "\"A Voa Negócio mudou completamente nossa visão. Antes gastávamos rios de dinheiro em anúncios sem retorno. Agora temos previsibilidade.\"",
+            author: "Nome do Cliente",
+            role: "CEO, Empresa 1",
+            initials: "NM",
+            videoUrl: "/videos/videoteste1.mp4",
+            thumbnail: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            id: 2,
+            stars: 5,
+            text: "\"O processo comercial ficou muito mais claro. A equipe sabe exatamente o que fazer com cada lead que chega.\"",
+            author: "Maria Silva",
+            role: "Diretora Comercial, Empresa 2",
+            initials: "MS",
+            videoUrl: "/videos/videoteste1.mp4",
+            thumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            id: 3,
+            stars: 5,
+            text: "\"Finalmente paramos de depender da sorte. Temos um funil que funciona e traz clientes qualificados todo dia.\"",
+            author: "João Santos",
+            role: "Fundador, Empresa 3",
+            initials: "JS",
+            videoUrl: "/videos/videoteste1.mp4",
+            thumbnail: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            id: 4,
+            stars: 5,
+            text: "\"A consultoria foi um divisor de águas. Conseguimos estruturar nosso comercial e escalar as vendas em tempo recorde.\"",
+            author: "Ana Pereira",
+            role: "Marketing, Empresa 4",
+            initials: "AP",
+            videoUrl: "/videos/videoteste1.mp4",
+            thumbnail: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            id: 5,
+            stars: 5,
+            text: "\"Simplesmente sensacional. A metodologia aplicada pela Voa Negócio trouxe uma clareza que nunca tivemos antes.\"",
+            author: "Carlos Lima",
+            role: "Diretor, Empresa 5",
+            initials: "CL",
+            videoUrl: "/videos/videoteste1.mp4",
+            thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        }
+    ];
+
+    const scroll = (direction) => {
+        if (scrollContainerRef.current) {
+            const container = scrollContainerRef.current;
+            const scrollAmount = direction === 'left' ? -400 : 400;
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    };
+
+    const handleScroll = () => {
+        if (scrollContainerRef.current) {
+            const container = scrollContainerRef.current;
+            const scrollPosition = container.scrollLeft;
+            const itemWidth = window.innerWidth < 768 ? window.innerWidth * 0.8 : 400;
+            const index = Math.round(scrollPosition / itemWidth);
+            setActiveIndex(Math.min(Math.max(0, index), testimonials.length - 1));
+        }
+    };
+
+    useEffect(() => {
+        const container = scrollContainerRef.current;
+        if (container) {
+            container.addEventListener('scroll', handleScroll, { passive: true });
+            return () => container.removeEventListener('scroll', handleScroll);
+        }
+    }, [testimonials.length]);
+
     return (
         <section id="prova-social" className="py-24 relative overflow-hidden">
             {/* Background Image with Mask */}
@@ -25,40 +109,80 @@ const SocialProof = () => {
                     Empresas que aplicam estrutura param de "testar marketing" e começam a <span className="text-voa-cyan">operar crescimento</span>.
                 </motion.h2>
 
-                {/* Placeholder for Logos */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-                    {/* Replace these with actual SVGs later */}
-                    {['CLIENTE 01', 'CLIENTE 02', 'CLIENTE 03', 'CLIENTE 04'].map((client, index) => (
-                        <div key={index} className="h-16 bg-black/20 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-white/30 border border-white/5 hover:border-voa-cyan/20 transition-colors">
-                            {client}
-                        </div>
-                    ))}
+                {/* Infinite Logo Carousel */}
+                <div className="w-full relative overflow-hidden mb-20 pointer-events-none">
+                    <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-voa-grey to-transparent z-10" />
+                    <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-voa-grey to-transparent z-10" />
+
+                    <div className="flex w-max animate-scroll gap-16 items-center">
+                        {/* First Set */}
+                        {['CLIENTE 01', 'CLIENTE 02', 'CLIENTE 03', 'CLIENTE 04', 'CLIENTE 05', 'CLIENTE 06'].map((client, index) => (
+                            <div key={`a-${index}`} className="h-20 w-48 bg-black/20 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-white/30 border border-white/5 uppercase tracking-widest shrink-0">
+                                {client}
+                            </div>
+                        ))}
+                        {/* Duplicate Set for Loop */}
+                        {['CLIENTE 01', 'CLIENTE 02', 'CLIENTE 03', 'CLIENTE 04', 'CLIENTE 05', 'CLIENTE 06'].map((client, index) => (
+                            <div key={`b-${index}`} className="h-20 w-48 bg-black/20 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-white/30 border border-white/5 uppercase tracking-widest shrink-0">
+                                {client}
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
-                {/* Text/Video Testimonials Placeholder */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {[1, 2, 3].map((i, index) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-black/20 backdrop-blur-md p-8 rounded-2xl border border-white/5 text-left hover:border-voa-cyan/30 transition-all hover:-translate-y-1 shadow-lg"
-                        >
-                            <div className="flex gap-1 mb-4">
-                                {[1, 2, 3, 4, 5].map(star => <span key={star} className="text-yellow-500">★</span>)}
+                {/* Testimonials Carousel (Scrollable) */}
+                <div className="w-full relative group">
+                    {/* Navigation Buttons (Desktop) */}
+                    <button
+                        onClick={() => scroll('left')}
+                        className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 xl:-translate-x-12 z-20 w-12 h-12 bg-voa-navy/80 border border-voa-cyan/30 rounded-full items-center justify-center text-voa-cyan hover:bg-voa-cyan hover:text-voa-navy transition-all shadow-lg backdrop-blur-sm group-hover:opacity-100 opacity-0 md:opacity-100"
+                        aria-label="Previous Testimonial"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+                    <button
+                        onClick={() => scroll('right')}
+                        className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 xl:translate-x-12 z-20 w-12 h-12 bg-voa-navy/80 border border-voa-cyan/30 rounded-full items-center justify-center text-voa-cyan hover:bg-voa-cyan hover:text-voa-navy transition-all shadow-lg backdrop-blur-sm group-hover:opacity-100 opacity-0 md:opacity-100"
+                        aria-label="Next Testimonial"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
+
+                    <div
+                        ref={scrollContainerRef}
+                        className="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory py-4 px-4 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:none] scroll-smooth"
+                    >
+                        {testimonials.map((item, index) => (
+                            <div
+                                key={item.id}
+                                className="min-w-[80vw] md:min-w-[400px] flex-shrink-0 snap-center"
+                            >
+                                <TestimonialCard item={item} index={index} />
                             </div>
-                            <p className="text-voa-light mb-6 text-sm italic leading-relaxed">"A Voa Negócio mudou completamente nossa visão. Antes gastávamos rios de dinheiro em anúncios sem retorno. Agora temos previsibilidade."</p>
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-gradient-to-br from-voa-navy to-voa-blue rounded-full flex items-center justify-center text-xs font-bold text-white/50">FT</div>
-                                <div>
-                                    <p className="text-white font-bold text-sm">Nome do Cliente</p>
-                                    <p className="text-voa-light/60 text-xs">CEO, Empresa {i}</p>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                        ))}
+                    </div>
+
+                    {/* Dot Indicators */}
+                    <div className="flex justify-center gap-2 mt-8">
+                        {testimonials.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => {
+                                    if (scrollContainerRef.current) {
+                                        const itemWidth = window.innerWidth < 768 ? window.innerWidth * 0.8 : 400;
+                                        // A simple scroll to position
+                                        const gap = window.innerWidth < 768 ? 16 : 32;
+                                        scrollContainerRef.current.scrollTo({ left: index * (itemWidth + gap), behavior: 'smooth' })
+                                    }
+                                }}
+                                className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex
+                                        ? 'w-8 bg-voa-cyan shadow-[0_0_10px_rgba(0,207,255,0.5)]'
+                                        : 'w-2 bg-white/20 hover:bg-white/40'
+                                    }`}
+                                aria-label={`Go to slide ${index + 1}`}
+                            />
+                        ))}
+                    </div>
                 </div>
 
                 <motion.div

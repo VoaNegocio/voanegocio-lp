@@ -50,7 +50,7 @@ const Problem = () => {
                 >
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                         Você até investe em marketing. <br />
-                        <span className="text-voa-light/60">Mas a conta não fecha.</span>
+                        <span className="text-voa-light/60">Mas a conta <span className="text-red-500">não fecha.</span></span>
                     </h2>
                     <p className="text-lg text-voa-light">
                         No fim, sobra uma sensação comum: muito esforço e pouca previsibilidade de crescimento real.
