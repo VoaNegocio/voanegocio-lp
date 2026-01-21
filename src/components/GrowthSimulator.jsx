@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calculator, ArrowRight, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
+import growthBg from '../assets/images/growth-simulator-bg.png';
 
 const GrowthSimulator = () => {
     const [investment, setInvestment] = useState(5000);
@@ -51,24 +52,37 @@ const GrowthSimulator = () => {
     }, [investment, cpl, ticket, conversion]);
 
     return (
-        <section className="py-24 bg-voa-navy relative overflow-hidden">
-            <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
+        <section className="py-24 relative overflow-hidden">
+            {/* Background Image with Mask */}
+            <div className="absolute inset-0 z-0">
+                <img
+                    src={growthBg}
+                    alt="Financial Growth Background"
+                    className="w-full h-full object-cover opacity-50"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-voa-navy via-voa-navy/95 to-voa-navy/80" />
+                <div className="absolute inset-0 bg-gradient-to-b from-voa-navy via-transparent to-voa-navy" />
+            </div>
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mx-auto text-center mb-12">
-                    <span className="text-voa-cyan font-bold tracking-wider text-sm uppercase mb-4 block">Simulador de Crescimento</span>
+                    <span className="text-voa-cyan font-bold tracking-wider text-sm uppercase mb-4 block drop-shadow-md">Simulador de Crescimento</span>
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                         Quanto dinheiro você está <br />
-                        <span className="text-red-500">deixando na mesa?</span>
+                        <span className="text-red-500 text-glow">deixando na mesa?</span>
                     </h2>
-                    <p className="text-lg text-voa-light">
+                    <p className="text-lg text-voa-light max-w-2xl mx-auto">
                         Simule o impacto de uma estrutura de vendas validada no seu faturamento.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto bg-voa-grey/30 border border-white/5 rounded-3xl p-6 md:p-10 backdrop-blur-sm">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto backdrop-blur-md bg-voa-navy/40 border border-white/5 rounded-[2rem] p-6 md:p-10 shadow-2xl relative overflow-hidden">
+                    {/* Decorative Background Elements inside Card */}
+                    <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-voa-blue/10 rounded-full blur-[80px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
+                    <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-brand-green/5 rounded-full blur-[60px] pointer-events-none translate-y-1/2 -translate-x-1/2" />
+
                     {/* Inputs */}
-                    <div className="space-y-8">
+                    <div className="space-y-8 relative z-10">
                         <div>
                             <label className="block text-voa-light text-sm font-medium mb-2">Investimento em Mídia (Mensal)</label>
                             <div className="flex items-center gap-4">
@@ -135,8 +149,8 @@ const GrowthSimulator = () => {
                     </div>
 
                     {/* Results */}
-                    <div className="lg:border-l border-white/10 lg:pl-10 flex flex-col justify-center">
-                        <div className="bg-voa-navy rounded-2xl p-6 border border-white/10 relative overflow-hidden group">
+                    <div className="lg:border-l border-white/10 lg:pl-10 flex flex-col justify-center relative z-10">
+                        <div className="bg-voa-navy/60 rounded-2xl p-6 border border-white/10 relative overflow-hidden group shadow-lg">
                             <div className="absolute top-0 right-0 p-4 opacity-10">
                                 <TrendingUp className="w-24 h-24 text-voa-cyan" />
                             </div>
@@ -167,9 +181,9 @@ const GrowthSimulator = () => {
                                 </div>
 
                                 <div className="pt-2">
-                                    <div className="bg-brand-green/20 border border-brand-green/30 p-3 rounded-lg text-center">
+                                    <div className="bg-brand-green/20 border border-brand-green/30 p-3 rounded-lg text-center shadow-[0_0_15px_rgba(37,211,102,0.1)]">
                                         <p className="text-brand-green text-sm font-bold">
-                                            +{formatCurrency(projectedResults.revenueIncrease)} em receita extra mental
+                                            +{formatCurrency(projectedResults.revenueIncrease)} em receita extra mensal
                                         </p>
                                     </div>
                                 </div>
