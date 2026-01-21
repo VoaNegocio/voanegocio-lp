@@ -1,6 +1,7 @@
 import React from 'react';
 import { AlertCircle, TrendingDown, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
+import problemBg from '../assets/images/problem-grey-bg.png';
 
 const Problem = () => {
     const problems = [
@@ -8,25 +9,38 @@ const Problem = () => {
             icon: <TrendingDown className="w-8 h-8 text-red-500" />,
             title: "Demanda Fraca ou Errada",
             description: "Você investe, mas os leads que chegam são desqualificados ou curiosos.",
+            borderColor: "hover:border-red-500/50",
+            glowColor: "group-hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]"
         },
         {
             icon: <Users className="w-8 h-8 text-voa-cyan" />,
             title: "Comercial Não Converte",
             description: "O time de vendas reclama da qualidade dos leads e taxa de conversão é baixa.",
+            borderColor: "hover:border-voa-cyan/50",
+            glowColor: "group-hover:shadow-[0_0_20px_rgba(0,207,255,0.2)]"
         },
         {
             icon: <AlertCircle className="w-8 h-8 text-yellow-500" />,
             title: "Pouca Previsibilidade",
             description: "Muito esforço para fechar o mês e vender vira uma caixinha de surpresas.",
+            borderColor: "hover:border-yellow-500/50",
+            glowColor: "group-hover:shadow-[0_0_20px_rgba(234,179,8,0.2)]"
         },
     ];
 
     return (
-        <section className="py-20 bg-voa-grey relative overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <section className="py-20 relative overflow-hidden">
+            {/* Background Image with Grey Overlay */}
+            <div className="absolute inset-0 z-0 bg-voa-grey">
+                <img
+                    src={problemBg}
+                    alt="Structure Texture Background"
+                    className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-voa-grey via-transparent to-voa-grey opacity-90" />
+            </div>
 
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -51,9 +65,9 @@ const Problem = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-voa-navy p-8 rounded-2xl border border-white/5 hover:border-voa-cyan/30 transition-colors group"
+                            className={`bg-black/20 backdrop-blur-sm p-8 rounded-2xl border border-white/5 transition-all duration-300 group ${item.borderColor} ${item.glowColor} hover:-translate-y-1`}
                         >
-                            <div className="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors">
+                            <div className="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors border border-white/5">
                                 {item.icon}
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
