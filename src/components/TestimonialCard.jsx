@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, Volume2, VolumeX, Maximize, X } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, X } from 'lucide-react';
 
 const TestimonialCard = ({ item, index }) => {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -39,17 +39,6 @@ const TestimonialCard = ({ item, index }) => {
         if (videoRef.current) {
             videoRef.current.muted = !videoRef.current.muted;
             setIsMuted(videoRef.current.muted);
-        }
-    };
-
-    const toggleFullscreen = (e) => {
-        e.stopPropagation();
-        if (videoRef.current) {
-            if (videoRef.current.requestFullscreen) {
-                videoRef.current.requestFullscreen();
-            } else if (videoRef.current.webkitRequestFullscreen) {
-                videoRef.current.webkitRequestFullscreen();
-            }
         }
     };
 
@@ -151,9 +140,7 @@ const TestimonialCard = ({ item, index }) => {
                                 {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
                             </button>
                             <span className="text-white/50 text-xs font-mono uppercase tracking-widest">Voa Negócio</span>
-                            <button onClick={toggleFullscreen} className="text-white hover:text-voa-cyan transition-colors">
-                                <Maximize size={20} />
-                            </button>
+                            <div className="w-5" /> {/* Spacer to balance layout without maximize button */}
                         </div>
                     </div>
                 </div>

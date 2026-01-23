@@ -13,51 +13,61 @@ const SocialProof = () => {
             id: 1,
             stars: 5,
             text: "\"A Voa Negócio mudou completamente nossa visão. Antes gastávamos rios de dinheiro em anúncios sem retorno. Agora temos previsibilidade.\"",
-            author: "Nome do Cliente",
+            author: "Fernanda",
             role: "CEO, Empresa 1",
-            initials: "NM",
-            videoUrl: "/videos/videoteste1.mp4",
+            initials: "FE",
+            videoUrl: "/videos/videos-depoimentos/depoimento-fernanda-card1.mp4",
             thumbnail: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 2,
             stars: 5,
             text: "\"O processo comercial ficou muito mais claro. A equipe sabe exatamente o que fazer com cada lead que chega.\"",
-            author: "Maria Silva",
+            author: "Sueli",
             role: "Diretora Comercial, Empresa 2",
-            initials: "MS",
-            videoUrl: "/videos/videoteste1.mp4",
+            initials: "SU",
+            videoUrl: "/videos/videos-depoimentos/depoimento-sueli-card2.mp4",
             thumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 3,
             stars: 5,
             text: "\"Finalmente paramos de depender da sorte. Temos um funil que funciona e traz clientes qualificados todo dia.\"",
-            author: "João Santos",
-            role: "Fundador, Empresa 3",
-            initials: "JS",
-            videoUrl: "/videos/videoteste1.mp4",
+            author: "Isabela",
+            role: "Fundadora, Empresa 3",
+            initials: "IS",
+            videoUrl: "/videos/videos-depoimentos/depoimento-isabela-card3.mp4",
             thumbnail: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 4,
             stars: 5,
             text: "\"A consultoria foi um divisor de águas. Conseguimos estruturar nosso comercial e escalar as vendas em tempo recorde.\"",
-            author: "Ana Pereira",
+            author: "Marcelo",
             role: "Marketing, Empresa 4",
-            initials: "AP",
-            videoUrl: "/videos/videoteste1.mp4",
+            initials: "MA",
+            videoUrl: "/videos/videos-depoimentos/depoimento-marcelo-card4.mp4",
             thumbnail: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 5,
             stars: 5,
             text: "\"Simplesmente sensacional. A metodologia aplicada pela Voa Negócio trouxe uma clareza que nunca tivemos antes.\"",
-            author: "Carlos Lima",
+            author: "Provence",
             role: "Diretor, Empresa 5",
-            initials: "CL",
-            videoUrl: "/videos/videoteste1.mp4",
+            initials: "PR",
+            videoUrl: "/videos/videos-depoimentos/depoimento-provence-card5.mp4",
             thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            id: 6,
+            stars: 5,
+            text: "\"A parceria com a Voa Negócio foi fundamental para o nosso crescimento. Estratégias assertivas e resultados reais.\"",
+            author: "Fábio",
+            role: "Empresário",
+            initials: "FA",
+            videoUrl: "/videos/videos-depoimentos/depoimento-fabio-card6.mp4",
+            thumbnail: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         }
     ];
 
@@ -157,7 +167,10 @@ const SocialProof = () => {
                                 key={item.id}
                                 className="min-w-[80vw] md:min-w-[400px] flex-shrink-0 snap-center"
                             >
-                                <TestimonialCard item={item} index={index} />
+                                <TestimonialCard
+                                    item={item}
+                                    index={index}
+                                />
                             </div>
                         ))}
                     </div>
@@ -172,12 +185,13 @@ const SocialProof = () => {
                                         const itemWidth = window.innerWidth < 768 ? window.innerWidth * 0.8 : 400;
                                         // A simple scroll to position
                                         const gap = window.innerWidth < 768 ? 16 : 32;
-                                        scrollContainerRef.current.scrollTo({ left: index * (itemWidth + gap), behavior: 'smooth' })
+                                        const scrollTo = index * (itemWidth + gap)
+                                        scrollContainerRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' })
                                     }
                                 }}
                                 className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex
-                                        ? 'w-8 bg-voa-cyan shadow-[0_0_10px_rgba(0,207,255,0.5)]'
-                                        : 'w-2 bg-white/20 hover:bg-white/40'
+                                    ? 'w-8 bg-voa-cyan shadow-[0_0_10px_rgba(0,207,255,0.5)]'
+                                    : 'w-2 bg-white/20 hover:bg-white/40'
                                     }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />
@@ -195,7 +209,7 @@ const SocialProof = () => {
                         href="https://wa.me/5534991880039?text=Quero%20ter%20esses%20resultados%20na%20minha%20empresa"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-voa-cyan/10 border border-voa-cyan text-voa-cyan hover:bg-voa-cyan hover:text-voa-navy font-bold py-4 px-10 rounded-xl transition-all shadow-[0_0_20px_rgba(0,207,255,0.15)] hover:shadow-[0_0_30px_rgba(0,207,255,0.4)]"
+                        className="btn-primary"
                     >
                         Quero ter esses resultados
                     </a>
