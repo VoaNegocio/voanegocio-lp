@@ -98,15 +98,15 @@ const SocialProof = () => {
     }, [testimonials.length]);
 
     return (
-        <section id="prova-social" className="py-24 relative overflow-hidden">
+        <section id="prova-social" className="py-24 relative overflow-hidden bg-slate-50">
             {/* Background Image with Mask */}
-            <div className="absolute inset-0 z-0 bg-voa-grey">
+            <div className="absolute inset-0 z-0">
                 <img
                     src={socialProofBg}
                     alt="Grey Network Background"
-                    className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+                    className="w-full h-full object-cover opacity-5 mix-blend-multiply invert"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-voa-grey via-transparent to-voa-grey opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-transparent to-slate-50 opacity-90" />
             </div>
 
             <div className="container mx-auto px-4 text-center relative z-10">
@@ -114,26 +114,26 @@ const SocialProof = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-4xl font-bold text-white mb-16 max-w-4xl mx-auto"
+                    className="text-3xl md:text-4xl font-bold text-voa-navy mb-16 max-w-4xl mx-auto"
                 >
                     Empresas que aplicam estrutura param de "testar marketing" e começam a <span className="text-voa-cyan">operar crescimento</span>.
                 </motion.h2>
 
                 {/* Infinite Logo Carousel */}
                 <div className="w-full relative overflow-hidden mb-20 pointer-events-none">
-                    <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-voa-grey to-transparent z-10" />
-                    <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-voa-grey to-transparent z-10" />
+                    <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10" />
+                    <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-50 to-transparent z-10" />
 
                     <div className="flex w-max animate-scroll gap-16 items-center">
                         {/* First Set */}
                         {['CLIENTE 01', 'CLIENTE 02', 'CLIENTE 03', 'CLIENTE 04', 'CLIENTE 05', 'CLIENTE 06'].map((client, index) => (
-                            <div key={`a-${index}`} className="h-20 w-48 bg-black/20 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-white/30 border border-white/5 uppercase tracking-widest shrink-0">
+                            <div key={`a-${index}`} className="h-20 w-48 bg-black/20 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-black/50 border border-black/5 uppercase tracking-widest shrink-0">
                                 {client}
                             </div>
                         ))}
                         {/* Duplicate Set for Loop */}
                         {['CLIENTE 01', 'CLIENTE 02', 'CLIENTE 03', 'CLIENTE 04', 'CLIENTE 05', 'CLIENTE 06'].map((client, index) => (
-                            <div key={`b-${index}`} className="h-20 w-48 bg-black/20 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-white/30 border border-white/5 uppercase tracking-widest shrink-0">
+                            <div key={`b-${index}`} className="h-20 w-48 bg-black/20 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-black/50 border border-black/5 uppercase tracking-widest shrink-0">
                                 {client}
                             </div>
                         ))}
@@ -145,14 +145,14 @@ const SocialProof = () => {
                     {/* Navigation Buttons (Desktop) */}
                     <button
                         onClick={() => scroll('left')}
-                        className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 xl:-translate-x-12 z-20 w-12 h-12 bg-voa-navy/80 border border-voa-cyan/30 rounded-full items-center justify-center text-voa-cyan hover:bg-voa-cyan hover:text-voa-navy transition-all shadow-lg backdrop-blur-sm group-hover:opacity-100 opacity-0 md:opacity-100"
+                        className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 xl:-translate-x-12 z-20 w-12 h-12 bg-white border border-gray-200 rounded-full items-center justify-center text-voa-navy hover:bg-voa-navy hover:text-white transition-all shadow-lg group-hover:opacity-100 opacity-0 md:opacity-100"
                         aria-label="Previous Testimonial"
                     >
                         <ChevronLeft size={24} />
                     </button>
                     <button
                         onClick={() => scroll('right')}
-                        className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 xl:translate-x-12 z-20 w-12 h-12 bg-voa-navy/80 border border-voa-cyan/30 rounded-full items-center justify-center text-voa-cyan hover:bg-voa-cyan hover:text-voa-navy transition-all shadow-lg backdrop-blur-sm group-hover:opacity-100 opacity-0 md:opacity-100"
+                        className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 xl:translate-x-12 z-20 w-12 h-12 bg-white border border-gray-200 rounded-full items-center justify-center text-voa-navy hover:bg-voa-navy hover:text-white transition-all shadow-lg group-hover:opacity-100 opacity-0 md:opacity-100"
                         aria-label="Next Testimonial"
                     >
                         <ChevronRight size={24} />
@@ -160,7 +160,7 @@ const SocialProof = () => {
 
                     <div
                         ref={scrollContainerRef}
-                        className="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory py-4 px-4 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:none] scroll-smooth"
+                        className="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory py-6 px-4 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:none] scroll-smooth"
                     >
                         {testimonials.map((item, index) => (
                             <div
@@ -190,8 +190,8 @@ const SocialProof = () => {
                                     }
                                 }}
                                 className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex
-                                    ? 'w-8 bg-voa-cyan shadow-[0_0_10px_rgba(0,207,255,0.5)]'
-                                    : 'w-2 bg-white/20 hover:bg-white/40'
+                                    ? 'w-8 bg-voa-navy shadow-md'
+                                    : 'w-2 bg-gray-300 hover:bg-gray-400'
                                     }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />

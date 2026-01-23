@@ -21,14 +21,7 @@ const Solution = () => {
                     </p>
                 </motion.div>
 
-                <div className="p-1 rounded-3xl bg-gradient-to-r from-voa-blue via-voa-cyan to-brand-green max-w-5xl mx-auto">
-                    <div className="bg-voa-grey rounded-[22px] p-8 md:p-12 text-center">
-                        <h3 className="text-2xl font-bold text-white mb-4">Ideal para negócios de serviços</h3>
-                        <p className="text-voa-light text-lg">
-                            Onde <span className="text-voa-cyan">geração de demanda</span> e <span className="text-brand-green">conversão</span> precisam andar juntas.
-                        </p>
-                    </div>
-                </div>
+
                 <div className="mt-12 text-center">
                     <a
                         href="https://wa.me/5534991880039?text=Gostaria%20de%20saber%20mais%20sobre%20a%20solu%C3%A7%C3%A3o%20de%20vendas"

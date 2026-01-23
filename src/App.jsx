@@ -1,6 +1,5 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Problem from './components/Problem';
 import Thesis from './components/Thesis';
 import Authority from './components/Authority';
 import Solution from './components/Solution';
@@ -22,14 +21,12 @@ function App() {
 
       <main>
         <Hero />
-        <Problem />
+        <SocialProof />
         <Thesis />
         <Authority />
         <Solution />
         <Methodology />
         <GrowthSimulator />
-        <SocialProof />
-        <Filter />
         <CTAFinal />
       </main>
 
