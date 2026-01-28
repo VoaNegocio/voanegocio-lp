@@ -21,7 +21,7 @@ const Thesis = () => {
                 <div className="max-w-4xl mx-auto">
 
                     {/* Glass Card Container */}
-                    <div className="glass p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl backdrop-blur-md relative overflow-hidden">
+                    <div className="glass bg-white/10 p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl backdrop-blur-md relative overflow-hidden">
 
                         {/* Decorative glow inside card */}
                         <div className="absolute -top-20 -right-20 w-60 h-60 bg-voa-cyan/20 rounded-full blur-3xl pointer-events-none" />
@@ -40,23 +40,30 @@ const Thesis = () => {
                                     Nossa Tese
                                 </div>
                                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                                    Tráfego sem processo <br />
-                                    vira <span className="text-voa-cyan text-glow">desperdício</span>.
+                                    O problema não é <br />
+                                    <span className="text-voa-cyan text-glow">“anúncio”</span>.
                                 </h2>
                                 <div className="space-y-6 text-lg text-voa-light">
-                                    <p>
-                                        Quando marketing e comercial não estão alinhados, o anúncio só acelera o problema. Você gasta dinheiro para trazer pessoas que seu time não consegue fechar.
-                                    </p>
-                                    <p className="text-white font-medium border-l-4 border-voa-cyan pl-4">
-                                        O que muda o jogo é ter estrutura para gerar demanda com clareza e transformar isso em venda.
+                                    <p className="text-white text-xl">
+                                        O problema é que <strong className="text-voa-cyan">tráfego só acelera o que já existe:</strong>
                                     </p>
                                 </div>
 
-                                <div className="mt-8 flex flex-col gap-3">
-                                    {["Marketing alinhado ao Comercial", "Ativos de vendas validados", "Gestão de CRM e Pipeline"].map((item, i) => (
-                                        <div key={i} className="flex items-center gap-3">
-                                            <CheckCircle2 className="w-5 h-5 text-brand-green drop-shadow-[0_0_8px_rgba(37,211,102,0.5)]" />
-                                            <span className="text-voa-light font-medium">{item}</span>
+                                <div className="mt-8 flex flex-col gap-4">
+                                    {[
+                                        { text: "se sua comunicação está confusa → acelera lead ruim", highlight: "confusa" },
+                                        { text: "se o comercial está desorganizado → acelera perda", highlight: "desorganizado" },
+                                        { text: "se não existe acompanhamento → acelera desgaste e desistência", highlight: "acompanhamento" }
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex items-start gap-3">
+                                            <CheckCircle2 className="w-5 h-5 text-red-500 mt-1 shrink-0 drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
+                                            <span className="text-voa-light font-medium leading-relaxed">
+                                                {item.text.split('→').map((part, index) => (
+                                                    <span key={index}>
+                                                        {index === 0 ? part : <><span className="text-red-400 font-bold">→</span>{part}</>}
+                                                    </span>
+                                                ))}
+                                            </span>
                                         </div>
                                     ))}
                                 </div>
@@ -70,18 +77,18 @@ const Thesis = () => {
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 className="hidden md:block relative"
                             >
-                                <div className="relative z-10 bg-black/40 p-8 rounded-3xl border border-white/10 shadow-inner backdrop-blur-sm">
+                                <div className="relative z-10 bg-white/10 p-8 rounded-3xl border border-white/10 shadow-inner backdrop-blur-sm">
                                     <div className="space-y-4">
-                                        <div className="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/5">
+                                        <div className="flex items-center justify-between p-4 bg-black/60 rounded-xl border border-white/5">
                                             <span className="text-voa-light">Tráfego</span>
                                             <div className="h-1 flex-1 mx-4 bg-gradient-to-r from-red-500/50 to-transparent dashed opacity-50"></div>
                                             <span className="text-red-400">Vendas?</span>
                                         </div>
                                         <div className="flex justify-center text-xs text-voa-light uppercase tracking-widest my-2">vs</div>
-                                        <div className="flex items-center justify-between p-4 bg-voa-blue/10 rounded-xl border border-voa-blue/30 relative overflow-hidden group">
+                                        <div className="flex items-center justify-between p-4 bg-voa-purple/50 rounded-xl border border-voa-blue/30 relative overflow-hidden group">
                                             <div className="absolute inset-0 bg-voa-blue/5 animate-pulse"></div>
                                             <span className="text-white font-bold relative z-10">Tráfego</span>
-                                            <div className="h-1 flex-1 mx-4 bg-voa-blue rounded-full relative z-10 shadow-[0_0_10px_#3b00f2]"></div>
+                                            <div className="h-1 flex-1 mx-4 bg-voa-cyan rounded-full relative z-10 shadow-[0_0_10px_#3b00f2]"></div>
                                             <span className="text-white font-bold relative z-10">Processo</span>
                                             <div className="h-1 flex-1 mx-4 bg-brand-green rounded-full relative z-10 shadow-[0_0_10px_#25d366]"></div>
                                             <span className="text-brand-green font-bold relative z-10 text-shadow">Lucro</span>

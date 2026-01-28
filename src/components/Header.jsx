@@ -16,10 +16,11 @@ const Header = () => {
     return (
         <>
             {/* Top Bar - Filtro */}
-            <div className="bg-voa-navy/80 border-b border-voa-light/10 backdrop-blur-sm relative z-50">
-                <div className="container mx-auto px-4 py-2">
-                    <p className="text-xs md:text-sm text-center text-voa-light font-medium flex items-center justify-center gap-2">
-                        <span className="inline-block w-2 h-2 rounded-full bg-voa-cyan animate-pulse" />
+            <div className="bg-voa-cyan shadow-[0_0_20px_rgba(0,207,255,0.6)] relative z-50 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 w-full h-full animate-electricity translate-x-[-100%]" />
+                <div className="container mx-auto px-4 py-2 relative z-10">
+                    <p className="text-xs md:text-sm text-center text-voa-navy font-bold flex items-center justify-center gap-2">
+                        <span className="inline-block w-2 h-2 rounded-full bg-voa-navy animate-pulse" />
                         Recomendado para empresas com faturamento acima de R$100 mil ao mês
                     </p>
                 </div>
@@ -45,9 +46,12 @@ const Header = () => {
 
                     {/* CTA */}
                     <div className="hidden md:block">
-                        <button className="bg-voa-blue hover:bg-voa-cyan text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-all flex items-center gap-2 group shadow-lg shadow-voa-cyan/20">
-                            Falar com Especialista
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <button className="relative overflow-hidden bg-voa-purple hover:bg-voa-purple/90 text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-all flex items-center gap-2 group shadow-[0_0_20px_rgba(60,38,242,0.5)] hover:shadow-[0_0_30px_rgba(60,38,242,0.7)] hover:scale-105">
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 w-[200%] h-full animate-electricity" />
+                            <span className="relative z-10 flex items-center gap-2">
+                                Falar com Especialista
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </span>
                         </button>
                     </div>
 

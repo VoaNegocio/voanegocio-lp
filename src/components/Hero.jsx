@@ -62,7 +62,7 @@ const Hero = () => {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-lg md:text-xl text-voa-light mb-10 max-w-2xl mx-auto leading-relaxed"
                         >
-                            A <span className="text-voa-cyan">Voa </span><span className="text-white"> Negócio</span> ajuda PMEs a estruturarem <strong> <span className="text-voa-cyan">Marketing e Vendas</span></strong>, com foco total em aumento de faturamento e previsibilidade no digital.
+                            <span className="text-white font-bold">A <span className="text-voa-cyan">Voa </span></span> Negócio é uma <span className="text-voa-cyan font-bold">Aceleradora de Crescimento</span> que ajuda empresas a transformarem o digital em <span className="text-voa-cyan font-bold">faturamento previsível</span>, com método e execução.
                         </motion.p>
 
                         <motion.div
@@ -71,9 +71,12 @@ const Hero = () => {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="flex flex-col sm:flex-row items-center justify-center gap-4"
                         >
-                            <button className="w-full sm:w-auto bg-voa-blue hover:bg-voa-cyan hover:text-voa-navy text-white text-lg font-semibold px-8 py-4 rounded-xl transition-all shadow-[0_0_30px_-5px_rgb(59,0,242,0.4)] hover:shadow-[0_0_40px_-5px_rgb(0,207,255,0.6)] flex items-center justify-center gap-2 group">
-                                Falar com Especialista
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <button className="relative overflow-hidden w-full sm:w-auto bg-voa-purple hover:bg-voa-purple/90 text-white text-lg font-semibold px-8 py-4 rounded-xl transition-all shadow-[0_0_30px_rgba(60,38,242,0.5)] hover:shadow-[0_0_50px_rgba(60,38,242,0.7)] hover:scale-105 flex items-center justify-center gap-2 group">
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 w-[200%] h-full animate-electricity" />
+                                <span className="relative z-10 flex items-center gap-2">
+                                    Falar com Especialista
+                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                </span>
                             </button>
                             <a href="#como-funciona" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border border-white/10 text-white text-lg font-medium px-8 py-4 rounded-xl transition-all flex items-center justify-center backdrop-blur-sm">
                                 Ver Como Funciona
@@ -107,30 +110,30 @@ const Hero = () => {
 
                         {/* Card 2: Processo */}
                         <div className="group relative transition-all duration-300 hover:-translate-y-2">
-                            <div className="absolute inset-0 bg-voa-blue/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                            <div className="relative h-full bg-voa-navy/40 backdrop-blur-md border border-white/10 group-hover:border-voa-blue/50 p-8 rounded-2xl overflow-hidden transition-colors">
+                            <div className="absolute inset-0 bg-voa-cyan/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                            <div className="relative h-full bg-voa-navy/40 backdrop-blur-md border border-white/10 group-hover:border-voa-cyan/50 p-8 rounded-2xl overflow-hidden transition-colors">
                                 <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <Layers size={100} className="text-voa-blue" />
+                                    <Layers size={100} className="text-voa-cyan" />
                                 </div>
-                                <div className="w-14 h-14 bg-voa-cyan/20 rounded-xl flex items-center justify-center mb-6 text-voa-blue group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(59,0,242,0.3)]">
+                                <div className="w-14 h-14 bg-voa-blue/20 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(0,207,255,0.3)]">
                                     <Layers size={28} />
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-blue transition-colors">Processo</h3>
+                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Processo</h3>
                                 <p className="text-voa-light text-base leading-relaxed">Playbook de vendas e qualificação de leads para eliminar o caos comercial.</p>
                             </div>
                         </div>
 
                         {/* Card 3: Vendas */}
                         <div className="group relative transition-all duration-300 hover:-translate-y-2">
-                            <div className="absolute inset-0 bg-brand-green/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                            <div className="relative h-full bg-voa-navy/40 backdrop-blur-md border border-white/10 group-hover:border-brand-green/50 p-8 rounded-2xl overflow-hidden transition-colors">
+                            <div className="absolute inset-0 bg-voa-cyan/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                            <div className="relative h-full bg-voa-navy/40 backdrop-blur-md border border-white/10 group-hover:border-voa-cyan/50 p-8 rounded-2xl overflow-hidden transition-colors">
                                 <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <Zap size={100} className="text-brand-green" />
+                                    <Zap size={100} className="text-voa-cyan" />
                                 </div>
-                                <div className="w-14 h-14 bg-brand-green/20 rounded-xl flex items-center justify-center mb-6 text-brand-green group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(37,211,102,0.3)]">
+                                <div className="w-14 h-14 bg-voa-blue/20 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(0,207,255,0.3)]">
                                     <Zap size={28} />
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-brand-green transition-colors">Vendas</h3>
+                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Vendas</h3>
                                 <p className="text-voa-light text-base leading-relaxed">Conversão alta e aumento de faturamento com previsibilidade.</p>
                             </div>
                         </div>

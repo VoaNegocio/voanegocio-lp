@@ -13,6 +13,7 @@ export default {
         'voa-grey': '#37373d', // Surface / Cards
         'voa-light': '#adbdc9', // Text / Border
         'brand-green': '#25D366', // WhatsApp Green (Standard)
+        'voa-purple': 'rgb(60,38,242)', // Premium Purple
       },
       fontFamily: {
         sans: ['Figtree', 'Inter', 'sans-serif'],
@@ -20,6 +21,15 @@ export default {
       },
       backgroundImage: {
         'grid-pattern': "linear-gradient(to right, #37373d 1px, transparent 1px), linear-gradient(to bottom, #37373d 1px, transparent 1px)",
+      },
+      keyframes: {
+        electricity: {
+          '0%, 100%': { transform: 'translateX(-100%)' },
+          '50%': { transform: 'translateX(200%)' },
+        }
+      },
+      animation: {
+        'electricity': 'electricity 6s ease-in-out infinite',
       },
     },
   },
