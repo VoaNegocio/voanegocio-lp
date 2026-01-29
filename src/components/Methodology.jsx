@@ -57,12 +57,12 @@ const Methodology = () => {
 
                     <div className="space-y-12 relative z-10">
                         {/* Connecting Line (Vertical) */}
-                        <div className="absolute left-4 md:left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-blue-500 via-voa-cyan to-green-500 opacity-30"></div>
+                        <div className="absolute left-4 md:left-8 top-8 bottom-8 w-0.5 bg-[#F8F6F1] opacity-50"></div>
 
                         {phases.map((phase, index) => (
                             <div key={index} className="relative pl-12 md:pl-24 group">
                                 {/* Dot on line */}
-                                <div className={`absolute left-0 top-0 md:left-4 w-8 h-8 md:w-8 md:h-8 rounded-full border-4 ${phase.color} bg-voa-navy z-10 translate-x-1/2 md:-translate-x-1/2 shadow-[0_0_15px_rgba(0,0,0,0.5)]`}></div>
+                                <div className={`absolute left-0 top-0 md:left-4 w-8 h-8 md:w-8 md:h-8 rounded-full border-4 border-[#F8F6F1] bg-voa-navy z-10 translate-x-1/2 md:-translate-x-1/2 shadow-[0_0_15px_rgba(0,0,0,0.5)]`}></div>
 
                                 <div className="bg-white/5 border border-white/5 rounded-2xl p-8 hover:bg-white/[0.07] transition-all duration-300 hover:-translate-y-1 hover:border-white/10 shadow-lg">
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
