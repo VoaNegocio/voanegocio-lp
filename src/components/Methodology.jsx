@@ -5,31 +5,25 @@ import methodologyProcess from '../assets/images/methodology-process.png';
 const Methodology = () => {
     const phases = [
         {
-            title: "Fase 1 — Estruturação de Marketing",
-            period: "Mês 1",
+            title: "Demanda",
             color: "border-blue-500",
             bg: "bg-blue-500/10",
             text: "text-blue-400",
-            description: "Campanha no ar em até 30 dias, com base estratégica e ativos prontos para rodar.",
-            items: ["Diagnóstico e direcionamento estratégico", "Criativos + anúncios + landing page", "Tráfego rodando com clareza de objetivo"]
+            description: "Porque empresa que cresce precisa gerar oportunidade todo mês — não só quando aparece indicação."
         },
         {
-            title: "Fase 2 — Estruturação Comercial",
-            period: "Mês 2",
+            title: "Conversão",
             color: "border-voa-cyan",
             bg: "bg-voa-cyan/10",
             text: "text-voa-cyan",
-            description: "Desenhamos o processo de vendas para a demanda virar receita.",
-            items: ["Mapeamento do comercial atual (AS IS)", "Identificação de gargalos", "Processo ideal (TO BE) + treinamento gravado"]
+            description: <>Porque lead não é resultado.<br />Resultado é venda.</>
         },
         {
-            title: "Fase 3 — Acompanhamento e Performance",
-            period: "Meses 3 a 6",
+            title: "Acompanhamento",
             color: "border-brand-green",
             bg: "bg-green-500/10",
             text: "text-brand-green",
-            description: "Otimização contínua, com acompanhamento do que importa: leads e vendas.",
-            items: ["Gestor de tráfego dedicado", "Designer dedicado", "Relatórios semanais", "Acompanhamento de volume e conversão"]
+            description: <>Porque o que não é acompanhado… quebra.<br />E o que é acompanhado… melhora.</>
         }
     ];
 
@@ -47,7 +41,10 @@ const Methodology = () => {
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-20 relative z-20">Como Funciona</h2>
+                <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-6 relative z-20">NOSSA FILOSOFIA</h2>
+                <p className="text-xl text-center text-voa-light mb-16 max-w-3xl mx-auto relative z-20">
+                    Crescimento previsível no digital exige 3 coisas funcionando juntas:
+                </p>
 
                 <div className="max-w-5xl mx-auto backdrop-blur-sm bg-voa-navy/40 rounded-[2.5rem] p-8 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden">
 
@@ -65,26 +62,34 @@ const Methodology = () => {
                                 <div className={`absolute left-0 top-0 md:left-4 w-8 h-8 md:w-8 md:h-8 rounded-full border-4 border-[#F8F6F1] bg-voa-navy z-10 translate-x-1/2 md:-translate-x-1/2 shadow-[0_0_15px_rgba(0,0,0,0.5)]`}></div>
 
                                 <div className="bg-white/5 border border-white/5 rounded-2xl p-8 hover:bg-white/[0.07] transition-all duration-300 hover:-translate-y-1 hover:border-white/10 shadow-lg">
-                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <div className={`p-2 rounded-lg ${phase.bg} ${phase.text}`}>
+                                            <Check className="w-6 h-6" />
+                                        </div>
                                         <h3 className="text-2xl font-bold text-white">{phase.title}</h3>
-                                        <span className={`px-4 py-1 rounded-full text-sm font-bold ${phase.bg} ${phase.text} w-fit shadow-sm`}>
-                                            {phase.period}
-                                        </span>
                                     </div>
 
-                                    <p className="text-lg text-voa-light mb-8 border-l-2 border-white/10 pl-4">{phase.description}</p>
-
-                                    <ul className="space-y-3">
-                                        {phase.items.map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3 text-voa-light">
-                                                <Check className={`w-5 h-5 ${phase.text} shrink-0 mt-0.5 drop-shadow-[0_0_5px_rgba(0,207,255,0.3)]`} />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                    <p className="text-lg text-voa-light pl-2">{phase.description}</p>
                                 </div>
                             </div>
                         ))}
+
+                        <div className="text-center pt-8 pb-4">
+                            <p className="text-xl md:text-2xl font-medium text-white">
+                                Esse é o nosso método. <span className="font-bold text-voa-cyan">Simples. Aplicável. Mensurável.</span>
+                            </p>
+                        </div>
+
+                        <div className="text-center pt-4">
+                            <a
+                                href="https://wa.me/5534991880039?text=Gostaria%20de%20saber%20mais%20sobre%20a%20metodologia"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 bg-voa-cyan text-voa-navy hover:bg-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:shadow-voa-cyan/50 hover:scale-105"
+                            >
+                                Falar com Especialista
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

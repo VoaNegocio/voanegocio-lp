@@ -73,6 +73,17 @@ const Authority = () => {
                         </p>
                     </motion.div>
 
+                    <div className="mt-12 text-center">
+                        <a
+                            href="https://wa.me/5534991880039?text=Gostaria%20de%20saber%20mais%20sobre%20a%20solu%C3%A7%C3%A3o%20de%20vendas"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 bg-voa-cyan text-voa-navy hover:bg-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:shadow-voa-cyan/50 hover:scale-105"
+                        >
+                            Falar com Especialista
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </section>

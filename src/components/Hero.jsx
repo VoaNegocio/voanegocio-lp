@@ -103,8 +103,8 @@ const Hero = () => {
                                 <div className="w-14 h-14 bg-voa-blue/20 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(0,207,255,0.3)]">
                                     <BarChart2 size={28} />
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Marketing</h3>
-                                <p className="text-voa-light text-base leading-relaxed">Geração de demanda qualificada e previsível através de funis validados.</p>
+                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Demanda Qualificada</h3>
+                                <p className="text-voa-light text-base leading-relaxed">Criar um fluxo constante de leads certos, com clareza de oferta e público.</p>
                             </div>
                         </div>
 
@@ -118,8 +118,8 @@ const Hero = () => {
                                 <div className="w-14 h-14 bg-voa-blue/20 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(0,207,255,0.3)]">
                                     <Layers size={28} />
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Processo</h3>
-                                <p className="text-voa-light text-base leading-relaxed">Playbook de vendas e qualificação de leads para eliminar o caos comercial.</p>
+                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Conversão em Receita</h3>
+                                <p className="text-voa-light text-base leading-relaxed">Garantir que a demanda gerada vire venda — e não frustração.</p>
                             </div>
                         </div>
 
@@ -133,8 +133,8 @@ const Hero = () => {
                                 <div className="w-14 h-14 bg-voa-blue/20 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(0,207,255,0.3)]">
                                     <Zap size={28} />
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Vendas</h3>
-                                <p className="text-voa-light text-base leading-relaxed">Conversão alta e aumento de faturamento com previsibilidade.</p>
+                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Performance e Acompanhamento</h3>
+                                <p className="text-voa-light text-base leading-relaxed">Acompanhar, ajustar e escalar o que funciona.</p>
                             </div>
                         </div>
                     </div>
