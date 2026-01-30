@@ -190,7 +190,7 @@ const SocialProof = () => {
                                     }
                                 }}
                                 className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex
-                                    ? 'w-8 bg-voa-navy shadow-md'
+                                    ? 'w-8 bg-voa-navy'
                                     : 'w-2 bg-gray-300 hover:bg-gray-400'
                                     }`}
                                 aria-label={`Go to slide ${index + 1}`}

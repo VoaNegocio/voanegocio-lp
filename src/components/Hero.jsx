@@ -71,7 +71,7 @@ const Hero = () => {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="flex flex-col sm:flex-row items-center justify-center gap-4"
                         >
-                            <button className="relative overflow-hidden w-full sm:w-auto bg-voa-purple hover:bg-voa-purple/90 text-white text-lg font-semibold px-8 py-4 rounded-xl transition-all shadow-[0_0_30px_rgba(60,38,242,0.5)] hover:shadow-[0_0_50px_rgba(60,38,242,0.7)] hover:scale-105 flex items-center justify-center gap-2 group">
+                            <button className="relative overflow-hidden w-full sm:w-auto bg-gray-100 hover:bg-white text-voa-navy text-lg font-bold px-8 py-4 rounded-xl transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] hover:scale-105 flex items-center justify-center gap-2 group">
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 w-[200%] h-full animate-electricity" />
                                 <span className="relative z-10 flex items-center gap-2">
                                     Falar com Especialista
@@ -85,7 +85,6 @@ const Hero = () => {
                     </div>
                 </div>
 
-                {/* Glass Cards Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -95,12 +94,19 @@ const Hero = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {/* Card 1: Marketing */}
                         <div className="group relative transition-all duration-300 hover:-translate-y-2">
-                            <div className="absolute inset-0 bg-voa-cyan/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                            <div className="relative h-full bg-voa-navy/40 backdrop-blur-md border border-white/10 group-hover:border-voa-cyan/50 p-8 rounded-2xl overflow-hidden transition-colors">
+                            {/* Glow Effect Container */}
+                            <div className="absolute -inset-0.5 bg-gradient-to-r from-voa-cyan to-white/50 rounded-2xl blur opacity-60 transition duration-500"></div>
+
+                            <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl overflow-hidden transition-colors">
+
+                                {/* Corner Glows */}
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-voa-cyan/20 blur-[50px] rounded-full -mr-10 -mt-10 pointer-events-none"></div>
+                                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 blur-[50px] rounded-full -ml-10 -mb-10 pointer-events-none"></div>
+
                                 <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                                     <BarChart2 size={100} className="text-voa-cyan" />
                                 </div>
-                                <div className="w-14 h-14 bg-voa-blue/20 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(0,207,255,0.3)]">
+                                <div className="w-14 h-14 bg-gradient-to-br from-gray-50 to-gray-200 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                                     <BarChart2 size={28} />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Demanda Qualificada</h3>
@@ -110,12 +116,19 @@ const Hero = () => {
 
                         {/* Card 2: Processo */}
                         <div className="group relative transition-all duration-300 hover:-translate-y-2">
-                            <div className="absolute inset-0 bg-voa-cyan/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                            <div className="relative h-full bg-voa-navy/40 backdrop-blur-md border border-white/10 group-hover:border-voa-cyan/50 p-8 rounded-2xl overflow-hidden transition-colors">
+                            {/* Glow Effect Container */}
+                            <div className="absolute -inset-0.5 bg-gradient-to-r from-voa-cyan to-white/50 rounded-2xl blur opacity-60 transition duration-500"></div>
+
+                            <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl overflow-hidden transition-colors">
+
+                                {/* Corner Glows */}
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-voa-cyan/20 blur-[50px] rounded-full -mr-10 -mt-10 pointer-events-none"></div>
+                                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 blur-[50px] rounded-full -ml-10 -mb-10 pointer-events-none"></div>
+
                                 <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                                     <Layers size={100} className="text-voa-cyan" />
                                 </div>
-                                <div className="w-14 h-14 bg-voa-blue/20 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(0,207,255,0.3)]">
+                                <div className="w-14 h-14 bg-gradient-to-br from-gray-50 to-gray-200 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                                     <Layers size={28} />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Conversão em Receita</h3>
@@ -125,12 +138,17 @@ const Hero = () => {
 
                         {/* Card 3: Vendas */}
                         <div className="group relative transition-all duration-300 hover:-translate-y-2">
-                            <div className="absolute inset-0 bg-voa-cyan/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                            <div className="relative h-full bg-voa-navy/40 backdrop-blur-md border border-white/10 group-hover:border-voa-cyan/50 p-8 rounded-2xl overflow-hidden transition-colors">
+                            {/* Glow Effect Container */}
+                            <div className="absolute -inset-0.5 bg-gradient-to-r from-voa-cyan to-white/50 rounded-2xl blur opacity-60 transition duration-500"></div>
+
+                            <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl overflow-hidden transition-colors">
+
+
+
                                 <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                                     <Zap size={100} className="text-voa-cyan" />
                                 </div>
-                                <div className="w-14 h-14 bg-voa-blue/20 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(0,207,255,0.3)]">
+                                <div className="w-14 h-14 bg-gradient-to-br from-gray-50 to-gray-200 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                                     <Zap size={28} />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Performance e Acompanhamento</h3>

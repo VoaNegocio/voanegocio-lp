@@ -44,7 +44,7 @@ const TestimonialCard = ({ item, index }) => {
 
     return (
         <div
-            className="group h-[450px] perspective-1000 cursor-pointer"
+            className="group h-[500px] w-full perspective-1000 cursor-pointer"
             onClick={!isFlipped ? handleFlip : undefined}
         >
             <motion.div
@@ -59,51 +59,58 @@ const TestimonialCard = ({ item, index }) => {
                 }}
                 className="relative h-full w-full transform-style-3d"
             >
-                {/* Front Face */}
-                <div className="absolute inset-0 backface-hidden bg-black/20 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden flex flex-col shadow-lg">
-                    {/* Top Image Thumbnail */}
-                    <div className="h-3/5 w-full relative overflow-hidden">
+                {/* Front Face - Travel Card Style */}
+                <div className="absolute inset-0 backface-hidden rounded-[2rem] overflow-hidden border-4 border-white bg-gray-900">
+
+                    {/* Full Height Background Image */}
+                    <div className="absolute inset-0">
                         <img
                             src={item.thumbnail}
                             alt={`Depoimento ${item.author}`}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-
-                        {/* Play Icon Hint */}
-                        <div className="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 group-hover:bg-voa-cyan group-hover:border-voa-cyan group-hover:text-voa-navy text-white transition-all duration-300 flex items-center gap-2">
-                            <span className="text-xs font-bold uppercase tracking-wider">Ver Depoimento</span>
-                            <Play size={14} fill="currentColor" />
-                        </div>
+                        {/* Gradient Overlay - Bottom Blur Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
                     </div>
 
-                    {/* Bottom Content - Google Feedback Style */}
-                    <div className="h-2/5 p-6 flex flex-col justify-between bg-gradient-to-b from-black/40 to-black/60">
-                        <div>
+                    {/* Top Right Floating Icon (Heart/Play) */}
+                    <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-lg transition-transform group-hover:scale-110">
+                        <Play size={20} fill="currentColor" className="ml-1" />
+                    </div>
+
+                    {/* Bottom Content Overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8 flex flex-col justify-end h-full pointer-events-none">
+                        <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+
+                            {/* Stars */}
                             <div className="flex gap-1 mb-3">
                                 {[...Array(item.stars)].map((_, i) => (
-                                    <span key={i} className="text-yellow-500 text-xs">★</span>
+                                    <span key={i} className="text-yellow-400 text-sm drop-shadow-md">★</span>
                                 ))}
                             </div>
-                            <p className="text-voa-light text-sm italic leading-relaxed line-clamp-3">
-                                {item.text}
-                            </p>
-                        </div>
 
-                        <div className="flex items-center gap-3 mt-4 pt-4 border-t border-white/5">
-                            <div className="w-8 h-8 bg-gradient-to-br from-voa-navy to-voa-blue rounded-full flex items-center justify-center text-xs font-bold text-white/50 border border-white/10">
-                                {item.initials}
-                            </div>
-                            <div>
-                                <p className="text-white font-bold text-xs">{item.author}</p>
-                                <p className="text-voa-light/60 text-[10px] uppercase tracking-wider">{item.role}</p>
+                            {/* Author Name - Big Typography */}
+                            <h3 className="text-3xl font-bold text-white mb-1 drop-shadow-lg leading-tight">
+                                {item.author}
+                            </h3>
+
+                            {/* Role / City */}
+                            <p className="text-white/80 text-sm font-medium mb-6 drop-shadow-md flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-voa-cyan inline-block"></span>
+                                {item.role}
+                            </p>
+
+                            {/* Action Button (Pill Shape) */}
+                            <div className="bg-white text-voa-navy font-bold py-4 px-6 rounded-full w-full text-center shadow-lg transform transition-all hover:bg-gray-100 hover:scale-[1.02] active:scale-95 pointer-events-auto flex items-center justify-center gap-2 group/btn">
+                                <span>Ver Depoimento </span>
+                                <Play size={16} fill="currentColor" className="group-hover/btn:translate-x-1 transition-transform" />
                             </div>
                         </div>
                     </div>
                 </div>
 
                 {/* Back Face (Video) */}
-                <div className="absolute inset-0 h-full w-full backface-hidden rotate-y-180 rounded-2xl overflow-hidden shadow-xl bg-black border border-voa-cyan/20 group">
+                <div className="absolute inset-0 h-full w-full backface-hidden rotate-y-180 rounded-[2rem] overflow-hidden bg-black border-4 border-white group">
                     <div className="relative w-full h-full" onClick={togglePlay}>
                         <video
                             ref={videoRef}
@@ -120,7 +127,7 @@ const TestimonialCard = ({ item, index }) => {
                         {/* Custom Play Indicator (Central) */}
                         {!isPlaying && (
                             <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-[2px] transition-all">
-                                <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(0,207,255,0.3)]">
+                                <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-110 transition-transform">
                                     <Play size={32} className="text-white fill-current" />
                                 </div>
                             </div>
@@ -129,18 +136,18 @@ const TestimonialCard = ({ item, index }) => {
                         {/* Close Button (Top Right) */}
                         <button
                             onClick={handleUnflip}
-                            className="absolute top-4 right-4 z-50 p-2 bg-black/40 hover:bg-black/60 text-white/70 hover:text-white rounded-full backdrop-blur-md border border-white/10 transition-all"
+                            className="absolute top-6 right-6 z-50 w-10 h-10 flex items-center justify-center bg-black/40 hover:bg-black/60 text-white hover:text-white rounded-full backdrop-blur-md border border-white/20 transition-all hover:scale-110"
                         >
                             <X size={20} />
                         </button>
 
-                        {/* Control Bar (Bottom Glass) */}
-                        <div className={`absolute bottom-6 left-6 right-6 z-20 flex justify-between items-center bg-black/40 backdrop-blur-md rounded-full px-5 py-3 border border-white/10 transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
+                        {/* Control Bar (Bottom Floating) */}
+                        <div className={`absolute bottom-8 left-8 right-8 z-20 flex justify-between items-center bg-black/40 backdrop-blur-md rounded-full px-6 py-3 border border-white/10 transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
                             <button onClick={toggleMute} className="text-white hover:text-voa-cyan transition-colors">
                                 {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
                             </button>
-                            <span className="text-white/50 text-xs font-mono uppercase tracking-widest">Voa Negócio</span>
-                            <div className="w-5" /> {/* Spacer to balance layout without maximize button */}
+                            <span className="text-white/60 text-xs font-mono uppercase tracking-widest">Voa Negócio</span>
+                            <div className="w-5" />
                         </div>
                     </div>
                 </div>

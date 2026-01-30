@@ -61,15 +61,15 @@ const Methodology = () => {
                                 {/* Dot on line */}
                                 <div className={`absolute left-0 top-0 md:left-4 w-8 h-8 md:w-8 md:h-8 rounded-full border-4 border-[#F8F6F1] bg-voa-navy z-10 translate-x-1/2 md:-translate-x-1/2 shadow-[0_0_15px_rgba(0,0,0,0.5)]`}></div>
 
-                                <div className="bg-white/5 border border-white/5 rounded-2xl p-8 hover:bg-white/[0.07] transition-all duration-300 hover:-translate-y-1 hover:border-white/10 shadow-lg">
+                                <div className="bg-white/90 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-lg">
                                     <div className="flex items-center gap-4 mb-4">
                                         <div className={`p-2 rounded-lg ${phase.bg} ${phase.text}`}>
                                             <Check className="w-6 h-6" />
                                         </div>
-                                        <h3 className="text-2xl font-bold text-white">{phase.title}</h3>
+                                        <h3 className="text-2xl font-bold text-voa-navy">{phase.title}</h3>
                                     </div>
 
-                                    <p className="text-lg text-voa-light pl-2">{phase.description}</p>
+                                    <p className="text-lg text-voa-navy pl-2">{phase.description}</p>
                                 </div>
                             </div>
                         ))}
