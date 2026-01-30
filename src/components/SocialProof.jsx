@@ -99,14 +99,14 @@ const SocialProof = () => {
 
     return (
         <section id="prova-social" className="py-24 relative overflow-hidden bg-slate-50">
-            {/* Background Image with Mask */}
-            <div className="absolute inset-0 z-0">
-                <img
-                    src={socialProofBg}
-                    alt="Grey Network Background"
-                    className="w-full h-full object-cover opacity-5 mix-blend-multiply invert"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-transparent to-slate-50 opacity-90" />
+            {/* Refined Tech Background */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                {/* Subtle Grid Pattern */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+
+                {/* Soft Ambient Light - Very Low Intensity */}
+                <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-voa-blue/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 opacity-30"></div>
+                <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-voa-cyan/5 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2 opacity-30"></div>
             </div>
 
             <div className="container mx-auto px-4 text-center relative z-10">

@@ -1,7 +1,83 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { ArrowRight, BarChart2, Layers, Zap } from 'lucide-react';
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useMotionValue, useInView } from 'framer-motion';
 import heroStructure from '../assets/images/hero-structure.png';
+
+const HeroCard = ({ icon: Icon, title, description, activeColor, delay }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { margin: "-20% 0px -20% 0px", once: false });
+    const [isHovered, setIsHovered] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // Logic: Active if (Mobile & InView) OR (Desktop & Hovered)
+    const isActive = (isMobile && isInView) || (!isMobile && isHovered);
+
+    // Color definitions
+    const colors = {
+        blue: {
+            borderFrom: 'from-blue-600',
+            borderTo: 'to-blue-600/20',
+            cornerGlow: 'bg-blue-600/40',
+            iconText: 'text-blue-500',
+            boxText: 'text-blue-600',
+            titleHover: 'text-blue-400'
+        },
+        green: {
+            borderFrom: 'from-green-500',
+            borderTo: 'to-green-500/20',
+            cornerGlow: 'bg-green-500/40',
+            iconText: 'text-green-500',
+            boxText: 'text-green-600',
+            titleHover: 'text-green-400'
+        },
+        cyan: {
+            borderFrom: 'from-voa-cyan',
+            borderTo: 'to-voa-cyan/20',
+            cornerGlow: 'bg-voa-cyan/40',
+            iconText: 'text-voa-cyan',
+            boxText: 'text-voa-cyan',
+            titleHover: 'text-voa-cyan'
+        }
+    };
+
+    // Default to Cyan properties if not active
+    const theme = isActive ? colors[activeColor] : colors['cyan'];
+
+    return (
+        <div
+            ref={ref}
+            className="group relative transition-all duration-300 hover:-translate-y-2"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            {/* Glow Effect Container */}
+            <div className={`absolute -inset-[1px] bg-gradient-to-b ${theme.borderFrom} via-transparent ${theme.borderTo} rounded-2xl blur opacity-60 transition duration-500`}></div>
+
+            <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl overflow-hidden transition-colors">
+
+                {/* Corner Glows - Reduced Size */}
+                <div className={`absolute top-0 right-0 w-6 h-6 ${theme.cornerGlow} blur-[20px] rounded-full -mr-2 -mt-2 pointer-events-none transition-colors duration-500`}></div>
+                <div className="absolute bottom-0 left-0 w-6 h-6 bg-white/20 blur-[20px] rounded-full -ml-2 -mb-2 pointer-events-none"></div>
+
+                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Icon size={100} className={`${theme.iconText} transition-colors duration-500`} />
+                </div>
+                <div className={`w-14 h-14 bg-gradient-to-br from-gray-50 to-gray-200 rounded-xl flex items-center justify-center mb-6 ${theme.boxText} group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(255,255,255,0.2)] duration-500`}>
+                    <Icon size={28} />
+                </div>
+                <h3 className={`text-2xl font-bold mb-3 text-white ${isActive ? theme.titleHover : ''} transition-colors duration-500`}>{title}</h3>
+                <p className="text-white text-base leading-relaxed">{description}</p>
+            </div>
+        </div>
+    );
+};
 
 const Hero = () => {
     return (
@@ -92,67 +168,24 @@ const Hero = () => {
                     className="mt-24 relative z-20"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {/* Card 1: Marketing */}
-                        <div className="group relative transition-all duration-300 hover:-translate-y-2">
-                            {/* Glow Effect Container */}
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-voa-cyan to-white/50 rounded-2xl blur opacity-60 transition duration-500"></div>
-
-                            <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl overflow-hidden transition-colors">
-
-                                {/* Corner Glows */}
-                                <div className="absolute top-0 right-0 w-24 h-24 bg-voa-cyan/20 blur-[50px] rounded-full -mr-10 -mt-10 pointer-events-none"></div>
-                                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 blur-[50px] rounded-full -ml-10 -mb-10 pointer-events-none"></div>
-
-                                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <BarChart2 size={100} className="text-voa-cyan" />
-                                </div>
-                                <div className="w-14 h-14 bg-gradient-to-br from-gray-50 to-gray-200 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                                    <BarChart2 size={28} />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Demanda Qualificada</h3>
-                                <p className="text-white text-base leading-relaxed">Criar um fluxo constante de leads certos, com clareza de oferta e público.</p>
-                            </div>
-                        </div>
-
-                        {/* Card 2: Processo */}
-                        <div className="group relative transition-all duration-300 hover:-translate-y-2">
-                            {/* Glow Effect Container */}
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-voa-cyan to-white/50 rounded-2xl blur opacity-60 transition duration-500"></div>
-
-                            <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl overflow-hidden transition-colors">
-
-
-
-                                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <Layers size={100} className="text-voa-cyan" />
-                                </div>
-                                <div className="w-14 h-14 bg-gradient-to-br from-gray-50 to-gray-200 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                                    <Layers size={28} />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Conversão em Receita</h3>
-                                <p className="text-white text-base leading-relaxed">Garantir que a demanda gerada vire venda — e não frustração.</p>
-                            </div>
-                        </div>
-
-                        {/* Card 3: Vendas */}
-                        <div className="group relative transition-all duration-300 hover:-translate-y-2">
-                            {/* Glow Effect Container */}
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-voa-cyan to-white/50 rounded-2xl blur opacity-60 transition duration-500"></div>
-
-                            <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl overflow-hidden transition-colors">
-
-
-
-                                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <Zap size={100} className="text-voa-cyan" />
-                                </div>
-                                <div className="w-14 h-14 bg-gradient-to-br from-gray-50 to-gray-200 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                                    <Zap size={28} />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Performance e Acompanhamento</h3>
-                                <p className="text-white text-base leading-relaxed">Acompanhar, ajustar e escalar o que funciona.</p>
-                            </div>
-                        </div>
+                        <HeroCard
+                            activeColor="blue"
+                            icon={BarChart2}
+                            title="Demanda Qualificada"
+                            description="Criar um fluxo constante de leads certos, com clareza de oferta e público."
+                        />
+                        <HeroCard
+                            activeColor="cyan"
+                            icon={Layers}
+                            title="Conversão em Receita"
+                            description="Garantir que a demanda gerada vire venda — e não frustração."
+                        />
+                        <HeroCard
+                            activeColor="green"
+                            icon={Zap}
+                            title="Performance e Acompanhamento"
+                            description="Acompanhar, ajustar e escalar o que funciona."
+                        />
                     </div>
                 </motion.div>
             </div>

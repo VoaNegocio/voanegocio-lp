@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { BarChart2, Users, Zap, ArrowRight } from 'lucide-react';
 
 const Solution = () => {
     return (
@@ -29,98 +30,149 @@ const Solution = () => {
                 </motion.div>
 
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-                    {/* Step 1 */}
+                    {/* Step 1 - Marketing */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="bg-gradient-to-b from-white/10 to-blue-600/5 backdrop-blur-md border border-white/10 border-t-white/20 rounded-2xl p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_40px_-12px_rgba(37,99,235,0.2)] hover:border-blue-500/30 hover:-translate-y-2 transition-all duration-300 group"
+                        className="group relative transition-all duration-300 hover:-translate-y-2"
                     >
-                        <div className="bg-blue-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span className="text-blue-400 font-bold text-xl">1</span>
+                        {/* Glow Effect Container */}
+                        <div className="absolute -inset-[1px] bg-gradient-to-b from-blue-600 via-transparent to-blue-600/20 rounded-2xl blur opacity-60 transition duration-500"></div>
+
+                        <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl overflow-hidden transition-colors">
+
+                            {/* Corner Glows - Reduced Size */}
+                            <div className="absolute top-0 right-0 w-6 h-6 bg-blue-600/40 blur-[20px] rounded-full -mr-2 -mt-2 pointer-events-none"></div>
+                            <div className="absolute bottom-0 left-0 w-6 h-6 bg-white/20 blur-[20px] rounded-full -ml-2 -mb-2 pointer-events-none"></div>
+
+                            {/* Background Icon */}
+                            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                                <BarChart2 size={100} className="text-blue-500" />
+                            </div>
+
+                            {/* Small Icon/Number Box */}
+                            <div className="w-14 h-14 bg-gradient-to-br from-gray-50 to-gray-200 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                                <span className="font-bold text-xl">1</span>
+                            </div>
+
+                            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Estruturação de Marketing</h3>
+                            <p className="text-blue-400 font-medium mb-4">— Demanda</p>
+                            <p className="text-sm text-gray-400 mb-6">Campanhas no ar em até 30 dias, com estratégia e ativos prontos para rodar.</p>
+                            <ul className="space-y-3 relative z-10">
+                                <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
+                                    Diagnóstico e direcionamento estratégico
+                                </li>
+                                <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
+                                    Criativos + anúncios + landing page
+                                </li>
+                                <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
+                                    Tráfego rodando com clareza de objetivo
+                                </li>
+                            </ul>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-2">Estruturação de Marketing</h3>
-                        <p className="text-blue-400 font-medium mb-4">— Demanda</p>
-                        <p className="text-sm text-gray-400 mb-6">Campanhas no ar em até 30 dias, com estratégia e ativos prontos para rodar.</p>
-                        <ul className="space-y-3">
-                            <li className="flex items-start gap-3 text-gray-300 text-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
-                                Diagnóstico e direcionamento estratégico
-                            </li>
-                            <li className="flex items-start gap-3 text-gray-300 text-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
-                                Criativos + anúncios + landing page
-                            </li>
-                            <li className="flex items-start gap-3 text-gray-300 text-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
-                                Tráfego rodando com clareza de objetivo
-                            </li>
-                        </ul>
                     </motion.div>
 
-                    {/* Step 2 */}
+                    {/* Step 2 - Commercial */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-gradient-to-b from-white/10 to-voa-cyan/5 backdrop-blur-md border border-white/10 border-t-white/20 rounded-2xl p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_40px_-12px_rgba(6,182,212,0.2)] hover:border-voa-cyan/30 hover:-translate-y-2 transition-all duration-300 group"
+                        className="group relative transition-all duration-300 hover:-translate-y-2"
                     >
-                        <div className="bg-voa-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span className="text-voa-cyan font-bold text-xl">2</span>
+                        {/* Glow Effect Container */}
+                        <div className="absolute -inset-[1px] bg-gradient-to-b from-voa-cyan via-transparent to-voa-cyan/20 rounded-2xl blur opacity-60 transition duration-500"></div>
+
+                        <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl overflow-hidden transition-colors">
+
+                            {/* Corner Glows - Reduced Size */}
+                            <div className="absolute top-0 right-0 w-6 h-6 bg-voa-cyan/40 blur-[20px] rounded-full -mr-2 -mt-2 pointer-events-none"></div>
+                            <div className="absolute bottom-0 left-0 w-6 h-6 bg-white/20 blur-[20px] rounded-full -ml-2 -mb-2 pointer-events-none"></div>
+
+                            {/* Background Icon */}
+                            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                                <Users size={100} className="text-voa-cyan" />
+                            </div>
+
+                            {/* Small Icon/Number Box */}
+                            <div className="w-14 h-14 bg-gradient-to-br from-gray-50 to-gray-200 rounded-xl flex items-center justify-center mb-6 text-voa-cyan group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                                <span className="font-bold text-xl">2</span>
+                            </div>
+
+                            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-voa-cyan transition-colors">Estruturação Comercial</h3>
+                            <p className="text-voa-cyan font-medium mb-4">— Conversão</p>
+                            <p className="text-sm text-gray-400 mb-6">A demanda vira receita com um processo comercial desenhado para o seu cenário.</p>
+                            <ul className="space-y-3 relative z-10">
+                                <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-voa-cyan mt-1.5 shrink-0" />
+                                    Mapeamento do comercial atual (AS IS)
+                                </li>
+                                <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-voa-cyan mt-1.5 shrink-0" />
+                                    Identificação de gargalos
+                                </li>
+                                <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-voa-cyan mt-1.5 shrink-0" />
+                                    Processo ideal (TO BE) + treinamento gravado
+                                </li>
+                            </ul>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-2">Estruturação Comercial</h3>
-                        <p className="text-voa-cyan font-medium mb-4">— Conversão</p>
-                        <p className="text-sm text-gray-400 mb-6">A demanda vira receita com um processo comercial desenhado para o seu cenário.</p>
-                        <ul className="space-y-3">
-                            <li className="flex items-start gap-3 text-gray-300 text-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-voa-cyan mt-1.5 shrink-0" />
-                                Mapeamento do comercial atual (AS IS)
-                            </li>
-                            <li className="flex items-start gap-3 text-gray-300 text-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-voa-cyan mt-1.5 shrink-0" />
-                                Identificação de gargalos
-                            </li>
-                            <li className="flex items-start gap-3 text-gray-300 text-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-voa-cyan mt-1.5 shrink-0" />
-                                Processo ideal (TO BE) + treinamento gravado
-                            </li>
-                        </ul>
                     </motion.div>
 
-                    {/* Step 3 */}
+                    {/* Step 3 - Performance */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="bg-gradient-to-b from-white/10 to-green-500/5 backdrop-blur-md border border-white/10 border-t-white/20 rounded-2xl p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_40px_-12px_rgba(34,197,94,0.2)] hover:border-green-500/30 hover:-translate-y-2 transition-all duration-300 group"
+                        className="group relative transition-all duration-300 hover:-translate-y-2"
                     >
-                        <div className="bg-green-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span className="text-green-400 font-bold text-xl">3</span>
+                        {/* Glow Effect Container */}
+                        <div className="absolute -inset-[1px] bg-gradient-to-b from-green-500 via-transparent to-green-500/20 rounded-2xl blur opacity-60 transition duration-500"></div>
+
+                        <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl overflow-hidden transition-colors">
+
+                            {/* Corner Glows - Reduced Size */}
+                            <div className="absolute top-0 right-0 w-6 h-6 bg-green-500/40 blur-[20px] rounded-full -mr-2 -mt-2 pointer-events-none"></div>
+                            <div className="absolute bottom-0 left-0 w-6 h-6 bg-white/20 blur-[20px] rounded-full -ml-2 -mb-2 pointer-events-none"></div>
+
+                            {/* Background Icon */}
+                            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                                <Zap size={100} className="text-green-500" />
+                            </div>
+
+                            {/* Small Icon/Number Box */}
+                            <div className="w-14 h-14 bg-gradient-to-br from-gray-50 to-gray-200 rounded-xl flex items-center justify-center mb-6 text-green-600 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                                <span className="font-bold text-xl">3</span>
+                            </div>
+
+                            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">Acompanhamento e Performance</h3>
+                            <p className="text-green-400 font-medium mb-4">— Previsibilidade</p>
+                            <p className="text-sm text-gray-400 mb-6">Otimização contínua com foco no que importa: volume e conversão.</p>
+                            <ul className="space-y-3 relative z-10">
+                                <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 shrink-0" />
+                                    Gestor de tráfego dedicado
+                                </li>
+                                <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 shrink-0" />
+                                    Designer dedicado
+                                </li>
+                                <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 shrink-0" />
+                                    Relatórios semanais
+                                </li>
+                                <li className="flex items-start gap-3 text-gray-300 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 shrink-0" />
+                                    Acompanhamento de volume e conversão
+                                </li>
+                            </ul>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-2">Acompanhamento e Performance</h3>
-                        <p className="text-green-400 font-medium mb-4">— Previsibilidade</p>
-                        <p className="text-sm text-gray-400 mb-6">Otimização contínua com foco no que importa: volume e conversão.</p>
-                        <ul className="space-y-3">
-                            <li className="flex items-start gap-3 text-gray-300 text-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 shrink-0" />
-                                Gestor de tráfego dedicado
-                            </li>
-                            <li className="flex items-start gap-3 text-gray-300 text-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 shrink-0" />
-                                Designer dedicado
-                            </li>
-                            <li className="flex items-start gap-3 text-gray-300 text-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 shrink-0" />
-                                Relatórios semanais
-                            </li>
-                            <li className="flex items-start gap-3 text-gray-300 text-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 shrink-0" />
-                                Acompanhamento de volume e conversão
-                            </li>
-                        </ul>
                     </motion.div>
                 </div>
 
@@ -129,9 +181,13 @@ const Solution = () => {
                         href="https://wa.me/5534991880039?text=Gostaria%20de%20saber%20mais%20sobre%20a%20solu%C3%A7%C3%A3o%20de%20vendas"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-voa-cyan text-voa-navy hover:bg-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:shadow-voa-cyan/50 hover:scale-105"
+                        className="relative overflow-hidden inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_30px_rgba(249,115,22,0.5)] hover:shadow-[0_0_50px_rgba(249,115,22,0.8)] hover:scale-105 group"
                     >
-                        Falar com Especialista
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 w-[200%] h-full animate-electricity" />
+                        <span className="relative z-10 flex items-center gap-2">
+                            Falar com Especialista
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </span>
                     </a>
                 </div>
             </div>
