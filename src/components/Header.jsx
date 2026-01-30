@@ -46,7 +46,7 @@ const Header = () => {
 
                     {/* CTA */}
                     <div className="hidden md:block">
-                        <button className="relative overflow-hidden bg-voa-purple hover:bg-voa-purple/90 text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-all flex items-center gap-2 group shadow-[0_0_20px_rgba(60,38,242,0.5)] hover:shadow-[0_0_30px_rgba(60,38,242,0.7)] hover:scale-105">
+                        <button className="relative overflow-hidden bg-green-600 hover:bg-orange-600 text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-all flex items-center gap-2 group shadow-[0_0_20px_rgba(22,163,74,0.5)] hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] hover:scale-105">
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 w-[200%] h-full animate-electricity" />
                             <span className="relative z-10 flex items-center gap-2">
                                 Falar com Especialista
@@ -70,7 +70,7 @@ const Header = () => {
                         <a href="#solucao" className="text-voa-light hover:text-white py-2" onClick={() => setIsMobileMenuOpen(false)}>Solução</a>
                         <a href="#como-funciona" className="text-voa-light hover:text-white py-2" onClick={() => setIsMobileMenuOpen(false)}>Como Funciona</a>
                         <a href="#prova-social" className="text-voa-light hover:text-white py-2" onClick={() => setIsMobileMenuOpen(false)}>Resultados</a>
-                        <button className="w-full bg-voa-blue text-white font-semibold px-6 py-3 rounded-lg flex items-center justify-center gap-2">
+                        <button className="w-full bg-green-600 hover:bg-orange-600 transition-colors text-white font-semibold px-6 py-3 rounded-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(22,163,74,0.5)] hover:shadow-[0_0_40px_rgba(249,115,22,0.8)]">
                             Falar com Especialista
                             <ArrowRight className="w-4 h-4" />
                         </button>

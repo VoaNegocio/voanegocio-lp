@@ -35,7 +35,7 @@ const Solution = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 group"
+                        className="bg-gradient-to-b from-white/10 to-blue-600/5 backdrop-blur-md border border-white/10 border-t-white/20 rounded-2xl p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_40px_-12px_rgba(37,99,235,0.2)] hover:border-blue-500/30 hover:-translate-y-2 transition-all duration-300 group"
                     >
                         <div className="bg-blue-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <span className="text-blue-400 font-bold text-xl">1</span>
@@ -65,7 +65,7 @@ const Solution = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 group"
+                        className="bg-gradient-to-b from-white/10 to-voa-cyan/5 backdrop-blur-md border border-white/10 border-t-white/20 rounded-2xl p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_40px_-12px_rgba(6,182,212,0.2)] hover:border-voa-cyan/30 hover:-translate-y-2 transition-all duration-300 group"
                     >
                         <div className="bg-voa-cyan/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <span className="text-voa-cyan font-bold text-xl">2</span>
@@ -95,7 +95,7 @@ const Solution = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 group"
+                        className="bg-gradient-to-b from-white/10 to-green-500/5 backdrop-blur-md border border-white/10 border-t-white/20 rounded-2xl p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] hover:shadow-[0_20px_40px_-12px_rgba(34,197,94,0.2)] hover:border-green-500/30 hover:-translate-y-2 transition-all duration-300 group"
                     >
                         <div className="bg-green-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <span className="text-green-400 font-bold text-xl">3</span>

@@ -71,7 +71,7 @@ const Hero = () => {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="flex flex-col sm:flex-row items-center justify-center gap-4"
                         >
-                            <button className="relative overflow-hidden w-full sm:w-auto bg-gray-100 hover:bg-white text-voa-navy text-lg font-bold px-8 py-4 rounded-xl transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] hover:scale-105 flex items-center justify-center gap-2 group">
+                            <button className="relative overflow-hidden w-full sm:w-auto bg-green-600 hover:bg-orange-600 text-white text-lg font-bold px-8 py-4 rounded-xl transition-all shadow-[0_0_30px_rgba(22,163,74,0.5)] hover:shadow-[0_0_50px_rgba(249,115,22,0.8)] hover:scale-105 flex items-center justify-center gap-2 group">
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 w-[200%] h-full animate-electricity" />
                                 <span className="relative z-10 flex items-center gap-2">
                                     Falar com Especialista
@@ -110,7 +110,7 @@ const Hero = () => {
                                     <BarChart2 size={28} />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Demanda Qualificada</h3>
-                                <p className="text-voa-light text-base leading-relaxed">Criar um fluxo constante de leads certos, com clareza de oferta e público.</p>
+                                <p className="text-white text-base leading-relaxed">Criar um fluxo constante de leads certos, com clareza de oferta e público.</p>
                             </div>
                         </div>
 
@@ -121,9 +121,7 @@ const Hero = () => {
 
                             <div className="relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl overflow-hidden transition-colors">
 
-                                {/* Corner Glows */}
-                                <div className="absolute top-0 right-0 w-24 h-24 bg-voa-cyan/20 blur-[50px] rounded-full -mr-10 -mt-10 pointer-events-none"></div>
-                                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 blur-[50px] rounded-full -ml-10 -mb-10 pointer-events-none"></div>
+
 
                                 <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                                     <Layers size={100} className="text-voa-cyan" />
@@ -132,7 +130,7 @@ const Hero = () => {
                                     <Layers size={28} />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Conversão em Receita</h3>
-                                <p className="text-voa-light text-base leading-relaxed">Garantir que a demanda gerada vire venda — e não frustração.</p>
+                                <p className="text-white text-base leading-relaxed">Garantir que a demanda gerada vire venda — e não frustração.</p>
                             </div>
                         </div>
 
@@ -152,7 +150,7 @@ const Hero = () => {
                                     <Zap size={28} />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-voa-cyan transition-colors">Performance e Acompanhamento</h3>
-                                <p className="text-voa-light text-base leading-relaxed">Acompanhar, ajustar e escalar o que funciona.</p>
+                                <p className="text-white text-base leading-relaxed">Acompanhar, ajustar e escalar o que funciona.</p>
                             </div>
                         </div>
                     </div>
