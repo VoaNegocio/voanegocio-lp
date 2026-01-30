@@ -17,7 +17,7 @@ const HeroCard = ({ icon: Icon, title, description, activeColor, delay }) => {
     }, []);
 
     // Logic: Active if (Mobile & InView) OR (Desktop & Hovered)
-    const isActive = (isMobile && isInView) || (!isMobile && isHovered);
+    const isActive = !isMobile && isHovered;
 
     // Color definitions
     const colors = {

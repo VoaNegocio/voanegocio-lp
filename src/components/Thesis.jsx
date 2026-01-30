@@ -40,7 +40,7 @@ const Thesis = () => {
                                     Nossa Tese
                                 </div>
                                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                                    O problema não é <span className="text-voa-cyan text-glow">“anúncio”</span>.
+                                    O problema não é <span className="text-transparent bg-clip-text bg-gradient-to-r from-voa-cyan to-white text-glow">“anúncio”</span>.
                                 </h2>
                                 <div className="space-y-6 text-lg text-voa-light">
                                     <p className="text-white text-xl">
@@ -70,7 +70,7 @@ const Thesis = () => {
                                             href="https://wa.me/5534991880039?text=Gostaria%20de%20saber%20mais%20sobre%20a%20solu%C3%A7%C3%A3o%20de%20vendas"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 bg-voa-cyan text-voa-navy hover:bg-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:shadow-voa-cyan/50 hover:scale-105"
+                                            className="inline-flex items-center gap-2 bg-green-600 text-white hover:bg-green-500 font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:shadow-green-500/50 hover:scale-105"
                                         >
                                             Falar com Especialista
                                         </a>

@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import socialProofBg from '../assets/images/social-proof-grey-network.png';
+import socialProofTexture from '../assets/images/social-proof-texture.png';
 import TestimonialCard from './TestimonialCard';
 
 const SocialProof = () => {
@@ -98,15 +99,30 @@ const SocialProof = () => {
     }, [testimonials.length]);
 
     return (
-        <section id="prova-social" className="py-24 relative overflow-hidden bg-slate-50">
-            {/* Refined Tech Background */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
-                {/* Subtle Grid Pattern */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <section id="prova-social" className="py-24 relative overflow-hidden bg-white">
+            {/* Background Texture Image */}
+            <div className="absolute inset-0 z-0">
+                <img
+                    src={socialProofTexture}
+                    alt="Background Texture"
+                    className="w-full h-full object-cover opacity-60 mix-blend-multiply"
+                />
+            </div>
 
-                {/* Soft Ambient Light - Very Low Intensity */}
-                <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-voa-blue/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 opacity-30"></div>
-                <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-voa-cyan/5 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2 opacity-30"></div>
+            {/* Gradient Overlay - Bottom */}
+            <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-white/40 to-voa-navy"></div>
+
+            {/* Gradient Overlay - Top Inverted */}
+            <div className="absolute top-0 left-0 right-0 h-[400px] z-0 bg-gradient-to-b from-voa-navy via-voa-navy/80 to-transparent"></div>
+
+            {/* Refined Tech Effect Layers */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                {/* Top Center Spotlight */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[600px] bg-gradient-to-b from-voa-blue/5 to-transparent opacity-60 blur-[100px]"></div>
+
+                {/* Soft Ambient Glows */}
+                <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-voa-blue/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 opacity-30"></div>
+                <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-voa-cyan/5 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2 opacity-30"></div>
             </div>
 
             <div className="container mx-auto px-4 text-center relative z-10">
@@ -114,26 +130,26 @@ const SocialProof = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-4xl font-bold text-voa-navy mb-16 max-w-4xl mx-auto"
+                    className="text-3xl md:text-4xl font-bold text-white mb-16 max-w-4xl mx-auto"
                 >
-                    Empresas que aplicam estrutura param de "testar marketing" e começam a <span className="text-voa-cyan">operar crescimento</span>.
+                    Empresas que aplicam estrutura param de "testar marketing" e começam a <span className="text-transparent bg-clip-text bg-gradient-to-r from-voa-cyan to-white text-glow">operar crescimento</span>.
                 </motion.h2>
 
                 {/* Infinite Logo Carousel */}
                 <div className="w-full relative overflow-hidden mb-20 pointer-events-none">
-                    <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10" />
-                    <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-50 to-transparent z-10" />
+                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
+                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
 
                     <div className="flex w-max animate-scroll gap-16 items-center">
                         {/* First Set */}
                         {['CLIENTE 01', 'CLIENTE 02', 'CLIENTE 03', 'CLIENTE 04', 'CLIENTE 05', 'CLIENTE 06'].map((client, index) => (
-                            <div key={`a-${index}`} className="h-20 w-48 bg-black/20 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-black/50 border border-black/5 uppercase tracking-widest shrink-0">
+                            <div key={`a-${index}`} className="h-20 w-48 bg-white/40 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-voa-navy/40 border border-white/20 uppercase tracking-widest shrink-0 shadow-sm">
                                 {client}
                             </div>
                         ))}
                         {/* Duplicate Set for Loop */}
                         {['CLIENTE 01', 'CLIENTE 02', 'CLIENTE 03', 'CLIENTE 04', 'CLIENTE 05', 'CLIENTE 06'].map((client, index) => (
-                            <div key={`b-${index}`} className="h-20 w-48 bg-black/20 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-black/50 border border-black/5 uppercase tracking-widest shrink-0">
+                            <div key={`b-${index}`} className="h-20 w-48 bg-white/40 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-voa-navy/40 border border-white/20 uppercase tracking-widest shrink-0 shadow-sm">
                                 {client}
                             </div>
                         ))}
@@ -175,7 +191,7 @@ const SocialProof = () => {
                         ))}
                     </div>
 
-                    {/* Dot Indicators */}
+                    {/* Dot Indicators - Updated for Dark Bottom Contrast */}
                     <div className="flex justify-center gap-2 mt-8">
                         {testimonials.map((_, index) => (
                             <button
@@ -190,8 +206,8 @@ const SocialProof = () => {
                                     }
                                 }}
                                 className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex
-                                    ? 'w-8 bg-voa-navy'
-                                    : 'w-2 bg-gray-300 hover:bg-gray-400'
+                                    ? 'w-8 bg-white'
+                                    : 'w-2 bg-white/30 hover:bg-white/50'
                                     }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />
@@ -209,9 +225,13 @@ const SocialProof = () => {
                         href="https://wa.me/5534991880039?text=Quero%20ter%20esses%20resultados%20na%20minha%20empresa"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-primary"
+                        className="relative overflow-hidden inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-orange-600 text-white text-lg font-bold py-4 px-10 rounded-xl transition-all shadow-[0_0_30px_rgba(22,163,74,0.5)] hover:shadow-[0_0_50px_rgba(249,115,22,0.8)] hover:scale-105 group"
                     >
-                        Quero ter esses resultados
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 w-[200%] h-full animate-electricity" />
+                        <span className="relative z-10 flex items-center gap-2">
+                            Quero ter esses resultados
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </span>
                     </a>
                 </motion.div>
             </div>
