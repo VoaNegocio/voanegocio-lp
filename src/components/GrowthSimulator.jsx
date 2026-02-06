@@ -3,6 +3,8 @@ import { Calculator, ArrowRight, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import growthBg from '../assets/images/growth-simulator-bg.png';
 
+import { sendWebhook } from '../utils/webhook';
+
 const GrowthSimulator = () => {
     const [investment, setInvestment] = useState(5000);
     const [cpl, setCpl] = useState(50);
@@ -50,6 +52,34 @@ const GrowthSimulator = () => {
         });
 
     }, [investment, cpl, ticket, conversion]);
+
+    const handleCtaClick = (e) => {
+        // Prevent default navigation initially to ensure logic runs
+        // But since we use sendBeacon/keepalive, strictly preventing default isn't always necessary if valid href.
+        // However, for clarity and explicit control:
+
+        const payload = {
+            event: 'growth_simulation_cta',
+            timestamp: new Date().toISOString(),
+            inputs: {
+                investment,
+                cpl,
+                ticket,
+                conversion
+            },
+            results: {
+                currentRevenue: currentResults.revenue,
+                projectedRevenue: projectedResults.revenue,
+                revenueIncrease: projectedResults.revenueIncrease,
+                potentialRoas: projectedResults.roas
+            }
+        };
+
+        sendWebhook(payload);
+
+        // Let the default <a> tag nav happen, or handle logic if mapped to onClick manually.
+        // Since we are adding onClick to the <a>, the href will still fire after this function.
+    };
 
     return (
         <section className="py-24 relative overflow-hidden">
@@ -192,7 +222,8 @@ const GrowthSimulator = () => {
                                     href="https://wa.me/5511932292255?text=Ol%C3%A1%2C%20venho%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Voa%20Neg%C3%B3cio."
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full bg-voa-blue hover:bg-voa-cyan text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-voa-cyan/25 group-hover:scale-[1.02]"
+                                    onClick={handleCtaClick}
+                                    className="w-full bg-voa-blue hover:bg-voa-cyan text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-voa-cyan/25 group-hover:scale-[1.02] cursor-pointer"
                                 >
                                     Quero construir esse resultado
                                     <ArrowRight className="w-5 h-5" />
