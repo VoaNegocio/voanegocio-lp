@@ -189,7 +189,7 @@ const GrowthSimulator = () => {
                                 </div>
 
                                 <a
-                                    href="https://wa.me/5534991880039?text=Fiz%20a%20simula%C3%A7%C3%A3o%20no%20site%20e%20quero%20esse%20resultado%20na%20minha%20empresa"
+                                    href="https://wa.me/5511932292255?text=Ol%C3%A1%2C%20venho%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Voa%20Neg%C3%B3cio."
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full bg-voa-blue hover:bg-voa-cyan text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-voa-cyan/25 group-hover:scale-[1.02]"

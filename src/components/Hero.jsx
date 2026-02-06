@@ -147,13 +147,18 @@ const Hero = () => {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="flex flex-col sm:flex-row items-center justify-center gap-4"
                         >
-                            <button className="relative overflow-hidden w-full sm:w-auto bg-green-600 hover:bg-orange-600 text-white text-lg font-bold px-8 py-4 rounded-xl transition-all shadow-[0_0_30px_rgba(22,163,74,0.5)] hover:shadow-[0_0_50px_rgba(249,115,22,0.8)] hover:scale-105 flex items-center justify-center gap-2 group">
+                            <a
+                                href="https://wa.me/5511932292255?text=Ol%C3%A1%2C%20venho%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Voa%20Neg%C3%B3cio."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="relative overflow-hidden w-full sm:w-auto bg-green-600 hover:bg-orange-600 text-white text-lg font-bold px-8 py-4 rounded-xl transition-all shadow-[0_0_30px_rgba(22,163,74,0.5)] hover:shadow-[0_0_50px_rgba(249,115,22,0.8)] hover:scale-105 flex items-center justify-center gap-2 group inline-flex"
+                            >
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 w-[200%] h-full animate-electricity" />
                                 <span className="relative z-10 flex items-center gap-2">
                                     Falar com Especialista
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </span>
-                            </button>
+                            </a>
                             <a href="#como-funciona" className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border border-white/10 text-white text-lg font-medium px-8 py-4 rounded-xl transition-all flex items-center justify-center backdrop-blur-sm">
                                 Ver Como Funciona
                             </a>

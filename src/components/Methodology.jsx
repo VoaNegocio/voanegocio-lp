@@ -82,7 +82,7 @@ const Methodology = () => {
 
                         <div className="text-center pt-4">
                             <a
-                                href="https://wa.me/5534991880039?text=Gostaria%20de%20saber%20mais%20sobre%20a%20metodologia"
+                                href="https://wa.me/5511932292255?text=Ol%C3%A1%2C%20venho%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Voa%20Neg%C3%B3cio."
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-voa-cyan text-voa-navy hover:bg-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:shadow-voa-cyan/50 hover:scale-105"

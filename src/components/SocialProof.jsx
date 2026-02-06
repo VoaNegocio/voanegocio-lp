@@ -136,25 +136,27 @@ const SocialProof = () => {
                 </motion.h2>
 
                 {/* Infinite Logo Carousel */}
+                {/* 
                 <div className="w-full relative overflow-hidden mb-20 pointer-events-none">
                     <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
                     <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
 
                     <div className="flex w-max animate-scroll gap-16 items-center">
-                        {/* First Set */}
+                        {/* First Set *}
                         {['CLIENTE 01', 'CLIENTE 02', 'CLIENTE 03', 'CLIENTE 04', 'CLIENTE 05', 'CLIENTE 06'].map((client, index) => (
                             <div key={`a-${index}`} className="h-20 w-48 bg-white/40 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-voa-navy/40 border border-white/20 uppercase tracking-widest shrink-0 shadow-sm">
                                 {client}
                             </div>
                         ))}
-                        {/* Duplicate Set for Loop */}
+                        {/* Duplicate Set for Loop *}
                         {['CLIENTE 01', 'CLIENTE 02', 'CLIENTE 03', 'CLIENTE 04', 'CLIENTE 05', 'CLIENTE 06'].map((client, index) => (
                             <div key={`b-${index}`} className="h-20 w-48 bg-white/40 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-voa-navy/40 border border-white/20 uppercase tracking-widest shrink-0 shadow-sm">
                                 {client}
                             </div>
                         ))}
                     </div>
-                </div>
+                </div> 
+                */}
 
                 {/* Testimonials Carousel (Scrollable) */}
                 <div className="w-full relative group">
@@ -222,7 +224,7 @@ const SocialProof = () => {
                     className="mt-16 text-center"
                 >
                     <a
-                        href="https://wa.me/5534991880039?text=Quero%20ter%20esses%20resultados%20na%20minha%20empresa"
+                        href="https://wa.me/5511932292255?text=Ol%C3%A1%2C%20venho%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Voa%20Neg%C3%B3cio."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="relative overflow-hidden inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-orange-600 text-white text-lg font-bold py-4 px-10 rounded-xl transition-all shadow-[0_0_30px_rgba(22,163,74,0.5)] hover:shadow-[0_0_50px_rgba(249,115,22,0.8)] hover:scale-105 group"

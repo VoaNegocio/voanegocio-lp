@@ -1,16 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
+import logo from '../assets/logo-header.webp';
+
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
+        let rafId = null;
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
+            if (rafId) return;
+            rafId = requestAnimationFrame(() => {
+                setIsScrolled(window.scrollY > 20);
+                rafId = null;
+            });
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (rafId) cancelAnimationFrame(rafId);
+        };
     }, []);
 
     return (
@@ -34,7 +45,14 @@ const Header = () => {
                 <div className="container mx-auto px-4 flex items-center justify-between">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <img src="/src/assets/logo-header.png" alt="Voa Negócio" className="h-8 md:h-10 w-auto" />
+                        <img
+                            src={logo}
+                            alt="Voa Negócio"
+                            className="h-8 md:h-10 w-auto"
+                            width="432"
+                            height="80"
+                            fetchPriority="high"
+                        />
                     </div>
 
                     {/* Desktop Nav */}
@@ -46,13 +64,18 @@ const Header = () => {
 
                     {/* CTA */}
                     <div className="hidden md:block">
-                        <button className="relative overflow-hidden bg-green-600 hover:bg-orange-600 text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-all flex items-center gap-2 group shadow-[0_0_20px_rgba(22,163,74,0.5)] hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] hover:scale-105">
+                        <a
+                            href="https://wa.me/5511932292255?text=Ol%C3%A1%2C%20venho%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Voa%20Neg%C3%B3cio."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative overflow-hidden bg-green-600 hover:bg-orange-600 text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-all flex items-center gap-2 group shadow-[0_0_20px_rgba(22,163,74,0.5)] hover:shadow-[0_0_40px_rgba(249,115,22,0.8)] hover:scale-105 inline-flex"
+                        >
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 w-[200%] h-full animate-electricity" />
                             <span className="relative z-10 flex items-center gap-2">
                                 Falar com Especialista
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </span>
-                        </button>
+                        </a>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -70,10 +93,15 @@ const Header = () => {
                         <a href="#solucao" className="text-voa-light hover:text-white py-2" onClick={() => setIsMobileMenuOpen(false)}>Solução</a>
                         <a href="#como-funciona" className="text-voa-light hover:text-white py-2" onClick={() => setIsMobileMenuOpen(false)}>Como Funciona</a>
                         <a href="#prova-social" className="text-voa-light hover:text-white py-2" onClick={() => setIsMobileMenuOpen(false)}>Resultados</a>
-                        <button className="w-full bg-green-600 hover:bg-orange-600 transition-colors text-white font-semibold px-6 py-3 rounded-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(22,163,74,0.5)] hover:shadow-[0_0_40px_rgba(249,115,22,0.8)]">
+                        <a
+                            href="https://wa.me/5511932292255?text=Ol%C3%A1%2C%20venho%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Voa%20Neg%C3%B3cio."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full bg-green-600 hover:bg-orange-600 transition-colors text-white font-semibold px-6 py-3 rounded-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(22,163,74,0.5)] hover:shadow-[0_0_40px_rgba(249,115,22,0.8)]"
+                        >
                             Falar com Especialista
                             <ArrowRight className="w-4 h-4" />
-                        </button>
+                        </a>
                     </div>
                 )}
             </header>
